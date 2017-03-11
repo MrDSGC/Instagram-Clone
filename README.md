@@ -4,8 +4,8 @@
 
 [Trello link][trello]
 
-[heroku]:
-[trello]:
+[heroku]:https://full-stack-project-insta-clone.herokuapp.com/
+[trello]:https://trello.com/b/pSOe6bhM/full-stack-project-instagram
 
 ## Minimum Viable Product
 
