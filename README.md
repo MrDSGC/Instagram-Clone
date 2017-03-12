@@ -55,12 +55,12 @@ the API.
 **Objective:** comments for images can be created, viewed, and
 destroyed through the api
 
-### Phase 5: Photo Feed (3 days)
+### Phase 5: Photo Feed (2 days)
 
 **Objective:** infinite scrolling photo feed that can be navigated
 through api
 
-### Phase 6: - Following
+### Phase 6: - Following (2)
 
 **Objective:** profile pages that can be viewed and navigated
 through api
