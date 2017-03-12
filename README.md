@@ -1,4 +1,4 @@
-# FresherNote
+# Instagram Clone (name pending)
 
 [Heroku link][heroku]
 
@@ -67,4 +67,6 @@ through api
 
 ### Bonus Features (TBD)
 - [ ] hashtags
-- [ ] DMs
+- [ ] Direct Messages
+- [ ] Discover page
+- [ ] Notification feed
