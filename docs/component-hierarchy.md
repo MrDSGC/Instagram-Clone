@@ -40,4 +40,5 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/feed" | "MainFeedContainer" |
 | "/:username" | "ProfileContainer" |
+| "/:username/edit" | "EditProfileContainer" |
 | "/:username/:id" | "PhotoContainer" |
