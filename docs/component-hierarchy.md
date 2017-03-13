@@ -12,6 +12,10 @@
  - Profile
  - ProfilePhotoIndex
 
+**EditProfileContainer**
+ - Header
+ - ProfileInfoForm
+
 **MainFeedContainer**
  - PhotoIndex
   + PhotoContainer
