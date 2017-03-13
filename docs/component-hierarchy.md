@@ -35,6 +35,7 @@
 
 |Path   | Component   |
 |-------|-------------|
+| "/" | "app.jsx"
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/feed" | "MainFeedContainer" |

@@ -16,7 +16,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 img_url     | string    | not null
-caption     | text      | not null
+caption     | text      |
 poster_id   | integer   | not null, foreign key (references users), indexed
 
 ## follows
@@ -24,7 +24,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 follower_id | integer   | not null, foreign key (references users), indexed
-follower_id | integer   | not null, foreign key (references users), indexed
+followee_id | integer   | not null, foreign key (references users), indexed
 
 
 ## comments
@@ -33,6 +33,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
 body        | text      | not null
+photo_id    | integer   | not null
 
 ## likes
 column name | data type | details
