@@ -24,3 +24,5 @@
 ### Photos
 - `GET /api/users/photos`
 - `GET /api/users/feed/photos` (get photos of all followed accounts)
+- `POST /api/users/photos`
+- `PATCH /api/users/photos`

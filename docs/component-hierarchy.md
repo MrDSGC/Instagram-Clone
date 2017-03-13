@@ -16,6 +16,10 @@
  - Header
  - ProfileInfoForm
 
+**EditPhotoContainer**
+ - Header
+ - PhotoForm
+
 **MainFeedContainer**
  - PhotoIndex
   + PhotoContainer
@@ -31,6 +35,10 @@
  - CommentsIndex
  - CommentsForm
 
+ **PhotoFormContainer**
+ - PhotoHeader
+ - PhotoForm
+
 ## Routes
 
 |Path   | Component   |
@@ -42,3 +50,5 @@
 | "/:username" | "ProfileContainer" |
 | "/:username/edit" | "EditProfileContainer" |
 | "/:username/:id" | "PhotoContainer" |
+| "/:username/upload" | "PhotoFormContainer" |
+| "/:username/:id/edit" | "PhotoEditContainer" |

@@ -18,6 +18,7 @@ id          | integer   | not null, primary key
 img_url     | string    | not null
 caption     | text      |
 poster_id   | integer   | not null, foreign key (references users), indexed
+location    | integer   | 
 
 ## follows
 column name | data type | details
