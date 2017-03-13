@@ -60,13 +60,12 @@ destroyed through the api
 **Objective:** infinite scrolling photo feed that can be navigated
 through api
 
-### Phase 6: - Following (2)
+### Phase 6: - Following (2 days)
 
 **Objective:** profile pages that can be viewed and navigated
 through api
 
 ### Bonus Features (TBD)
 - [ ] hashtags
-- [ ] Direct Messages
 - [ ] Discover page
 - [ ] Notification feed
