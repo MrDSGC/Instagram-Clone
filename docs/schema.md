@@ -5,8 +5,6 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
-name            | string    | not null
-email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 bio             | text      |
@@ -18,7 +16,7 @@ id          | integer   | not null, primary key
 img_url     | string    | not null
 caption     | text      |
 poster_id   | integer   | not null, foreign key (references users), indexed
-location    | integer   | 
+location    | string    |
 
 ## follows
 column name | data type | details
