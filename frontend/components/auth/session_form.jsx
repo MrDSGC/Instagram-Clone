@@ -27,6 +27,10 @@ class SessionForm extends React.Component {
 		this.props.login(guest)
 
 	}
+	
+	componentDidMount() {
+		this.props.clearErrors();
+	}
 
 	renderErrors() {
 		return(
@@ -63,7 +67,7 @@ class SessionForm extends React.Component {
 					</form>
 					<div className='or-obj'>
 						<div className="or-line"></div>
-						<figure className="or">OR</figure> 
+						<figure className="or">OR</figure>
 						<div className="or-line"></div>
 					</div>
 					<button onClick={this.handleGuestLogin} className="splash-button" >Guest Login</button>

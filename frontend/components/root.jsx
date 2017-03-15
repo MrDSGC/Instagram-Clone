@@ -38,7 +38,6 @@ const Root = ({ store }) => {
               onEnter={ _redirectIfLoggedIn } />
           </Route>
           <Route path='/main' component = { MainPageContainer } onEnter={_ensureLoggedIn}>
-
           </Route>
         </Route>
       </Router>

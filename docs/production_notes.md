@@ -8,3 +8,5 @@
     - Solved with mapping #receiveErrors(null) into forms and calling with life cycle methods
   + Not redirecting after login/logout
     - Solved with adding #hashHistory.push to #login and #logout then statements.
+
+**3/15 Images**

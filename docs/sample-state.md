@@ -8,7 +8,7 @@
     logIn: {errors: []},
     createComment: {errors: ["body can't be blank"]}
   },
-  photos: {
+  photo: {
     1: {
       img_url: "Sample State",
       caption: "this is a photo",
@@ -24,6 +24,13 @@
         }
       }
     }
+  },
+  photos: {
+    [{
+      img_url: "sample url",
+      like_count: 100,
+      comment_count: 100
+      }]
   },
   userDetails {
     username: "sammpleusername",

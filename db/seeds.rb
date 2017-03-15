@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 
-User.create!(username: "guest", password: "guestpassword")
+User.create!(username: "guest", password: "guestpassword", bio: "Aspiring photographer", profile_pic_url: "assets/default_profile_picture.png")
