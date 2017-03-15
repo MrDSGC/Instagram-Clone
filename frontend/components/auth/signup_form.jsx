@@ -41,18 +41,20 @@ class SignUpForm extends React.Component {
 		return (
 			<div className="signup-component">
 				<div className="signup-form">
-					<h1>InstaClone</h1>
+					<img className="logo-header" src="/assets/logo.png"/>
 					<form onSubmit={this.handleSubmit} >
 						<div className="signup-inputs">
 							<input type="text"
+								className="inputs"
 								value={this.state.username}
 								placeholder="Username"
 								onChange={this.update("username")}/>
 							<input type="password"
+								className="inputs"
 								value={this.state.password}
 								placeholder="Password"
 								onChange={this.update("password")}/>
-							<input type="submit" value="Submit" />
+							<input type="submit" value="Submit" className="splash-button"/>
 						</div>
 					</form>
 					{this.renderErrors()}

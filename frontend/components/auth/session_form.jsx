@@ -46,21 +46,27 @@ class SessionForm extends React.Component {
 			<div className="login-component">
 				<div className="login-form">
 					<form onSubmit={this.handleSubmit} >
-						<h1>InstaClone</h1>
+						<img className="logo-header"src="/assets/logo.png"/>
 						<div className="login-inputs">
 							<input type="text"
+								className="inputs"
 								value={this.state.username}
 								placeholder="Username"
 								onChange={this.update("username")}/>
 							<input type="password"
+								className="inputs"
 								value={this.state.password}
 								placeholder="Password"
 								onChange={this.update("password")}/>
-							<input type="submit" value="Submit" />
+							<input type="submit" value="Submit" className="splash-button" />
 						</div>
 					</form>
-					<div>OR</div>
-					<button onClick={this.handleGuestLogin}>Guest Login</button>
+					<div className='or-obj'>
+						<div className="or-line"></div>
+						<figure className="or">OR</figure> 
+						<div className="or-line"></div>
+					</div>
+					<button onClick={this.handleGuestLogin} className="splash-button" >Guest Login</button>
 					{this.renderErrors()}
 				</div>
         <div className = "to-signup">

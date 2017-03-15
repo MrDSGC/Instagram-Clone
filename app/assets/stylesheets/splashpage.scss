@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Billabong;
+  src: url(fonts/Billabong.ttf)
+}
+
+html {
+  background-color: #fafafa;
+}
+h1 {
+  font-family: Billabong;
+}
 .splash-page {
   display: flex;
   flex-direction: row;
@@ -6,14 +17,17 @@
   background-color: #fafafa;
 
 }
-
+.logo-header {
+  width: 100%;
+  max-height: 76px;
+}
 .vertical-center {
   display:flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.splash-page img {
+.splash-page-img {
   display: flex;
   height: 618px;
   width: auto;
@@ -26,35 +40,92 @@
   width: 300px;
 }
 
-.login-form, .signup-form {
+.login-form{
   display:flex;
+  background-color: #fff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid grey;
+  border: 1px solid #e6e6e6;
   padding: 40px;
-  padding-bottom: 120px;
-  margin-bottom: 90px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  flex-grow: 1
 }
-
+.signup-form {
+  display:flex;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  padding: 40px;
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+form, .splash-button {
+  width:230px;
+}
 .signup-inputs, .login-inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  button {
-    cursor:pointer;
-    padding: 0, 8px;
-    background-color: #3897f0;
-    border-color: #3897f0;
-  }
+}
+
+.inputs {
+  background: 0 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  -webkit-appearance: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+//or line wont work!
+.or-obj {
+  display:flex;
+  flex-direction: row;
+}
+
+.or {
+  color: #c7c7c7;
+  margin: 10px;
+}
+
+.or-line {
+  color: #c7c7c7;
+  height: 1px;
+  width: 64px;
+  position: relative;
+}
+.splash-button {
+  cursor:pointer;
+  padding: 0, 8px;
+  background-color: #3897f0;
+  border: 0 solid;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 8px 0px;
 }
 
 .to-login, .to-signup {
   display:flex;
+  background-color: #fff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  border: 1px solid grey;
+  border: 1px solid #e6e6e6;
   padding: 30px 40px;
 }
