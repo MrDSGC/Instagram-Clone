@@ -1,8 +1,12 @@
-## Component Hierarchy
+ ## Component Hierarchy
 
 **AuthFormContainer**
  - AuthHeader
  - AuthForm
+
+**MainPageContainer**
+ - NavContainer
+ - ProfileContainer/MainFeedContainer 
 
 **NavContainer**
  - Search
@@ -43,10 +47,11 @@
 
 |Path   | Component   |
 |-------|-------------|
-| "/" | "app.jsx"
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/feed" | "MainFeedContainer" |
+| "/" | "App"  |
+|"/splash"| "Splashpage"|
+| "/login" | "AuthFormContainer" |
+| "/signup" | "AuthFormContainer" |
+| "/main" | "MainPageContainer" |
 | "/:username" | "ProfileContainer" |
 | "/:username/edit" | "EditProfileContainer" |
 | "/:username/:id" | "PhotoContainer" |

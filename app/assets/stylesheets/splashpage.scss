@@ -1,0 +1,60 @@
+.splash-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+
+}
+
+.vertical-center {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splash-page img {
+  display: flex;
+  height: 618px;
+  width: auto;
+  align-items: center;
+}
+
+.auth-component {
+  display: flex;
+  height: 500px;
+  width: 300px;
+}
+
+.login-form, .signup-form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 40px;
+  padding-bottom: 120px;
+  margin-bottom: 90px;
+}
+
+.signup-inputs, .login-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button {
+    cursor:pointer;
+    padding: 0, 8px;
+    background-color: #3897f0;
+    border-color: #3897f0;
+  }
+}
+
+.to-login, .to-signup {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: 1px solid grey;
+  padding: 30px 40px;
+}

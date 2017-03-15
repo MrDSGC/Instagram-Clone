@@ -14,7 +14,8 @@
       caption: "this is a photo",
       poster_id: 1,
       likers: [],
-      created_at: "date"
+      created_at: "date",
+      location: "sample location"
 
       comments: {
         1: {
@@ -23,5 +24,13 @@
         }
       }
     }
+  },
+  userDetails {
+    username: "sammpleusername",
+    user_profile_pic: "sample_url",
+    user_post_count: 100,
+    user_follower_count: 100,
+    user_following_count: 100,
+    user_bio: text
   }
 }
