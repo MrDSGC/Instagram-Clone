@@ -1,0 +1,17 @@
+.profile-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 270px;
+}
+
+.profile-details {
+  height: 230px;
+  background-color: cyan;
+}
+
+.profile-photos {
+  height: 1000px;
+  border: 1px solid black;
+}

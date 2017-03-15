@@ -27,16 +27,16 @@ class SessionForm extends React.Component {
 		this.props.login(guest)
 
 	}
-	
+
 	componentDidMount() {
 		this.props.clearErrors();
 	}
 
 	renderErrors() {
 		return(
-			<ul>
+			<ul className="errors-list">
 				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
+					<li className="errors" key={`error-${i}`}>
 						{error}
 					</li>
 				))}
@@ -71,7 +71,9 @@ class SessionForm extends React.Component {
 						<div className="or-line"></div>
 					</div>
 					<button onClick={this.handleGuestLogin} className="splash-button" >Guest Login</button>
-					{this.renderErrors()}
+					<div>
+						{this.renderErrors()}
+					</div>
 				</div>
         <div className = "to-signup">
           Don't have an acount?

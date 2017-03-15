@@ -23,9 +23,9 @@ class SignUpForm extends React.Component {
 
 	renderErrors() {
 		return(
-			<ul>
+			<ul className="errors-list">
 				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
+					<li className="errors" key={`error-${i}`}>
 						{error}
 					</li>
 				))}
@@ -57,7 +57,9 @@ class SignUpForm extends React.Component {
 							<input type="submit" value="Submit" className="splash-button"/>
 						</div>
 					</form>
-					{this.renderErrors()}
+					<div >
+						{this.renderErrors()}
+					</div>
 				</div>
         <div className="to-login">
           <p>Have an acount?</p>

@@ -6,7 +6,7 @@ import Splashpage from './auth/splashpage'
 import SessionFormContainer from './auth/session_form_container'
 import SignUpFormContainer from './auth/signup_form_container'
 import MainPageContainer from './main_page/main_page_container'
-
+import ProfilePage from './profile_page/profile_page'
 
 const Root = ({ store }) => {
 
@@ -38,6 +38,7 @@ const Root = ({ store }) => {
               onEnter={ _redirectIfLoggedIn } />
           </Route>
           <Route path='/main' component = { MainPageContainer } onEnter={_ensureLoggedIn}>
+            <Route path='/:username' component = { ProfilePage }/>
           </Route>
         </Route>
       </Router>

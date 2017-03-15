@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    @photos = Photo.feed
+    @photos = Photo.where(poster_id: params[:id])
     render 'api/photos/index'
   end
 

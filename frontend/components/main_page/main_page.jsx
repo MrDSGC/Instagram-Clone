@@ -7,9 +7,9 @@ class MainPage extends React.Component {
   render () {
     return(
       <div>
-        <h1>CurrentUser: {this.props.currentUser.username} </h1>
+        <nav>NAV BAR GOES HERE</nav>
         <div>
-          { this.children }
+          { this.props.children }
         </div>
       </div>
 

@@ -1,13 +1,19 @@
-@font-face {
-  font-family: Billabong;
-  src: url(fonts/Billabong.ttf)
-}
+
 
 html {
   background-color: #fafafa;
 }
-h1 {
-  font-family: Billabong;
+
+.errors {
+  list-style-type: none;
+  color: red;
+}
+
+.errors-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0;
 }
 .splash-page {
   display: flex;
