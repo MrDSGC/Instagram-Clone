@@ -7,4 +7,32 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 
-User.create!(username: "guest", password: "guestpassword", bio: "Aspiring photographer", profile_pic_url: "assets/default_profile_picture.png")
+User.create!(
+  username: "guest",
+  password: "guestpassword",
+  biography: "Aspiring photographer",
+  profile_pic_url: "assets/default_profile_picture.png")
+
+Photo.delete_all
+
+
+Photo.create!(
+  img_url: "assets/default_profile_picture.png",
+  caption: "random photo2",
+  location: "random location2",
+  poster_id: 1)
+Photo.create!(
+  img_url: "assets/default_profile_picture.png",
+  caption: "random photo2",
+  location: "random location2",
+  poster_id: 1)
+Photo.create!(
+  img_url: "assets/default_profile_picture.png",
+  caption: "random photo2",
+  location: "random location2",
+  poster_id: 1)
+Photo.create!(
+  img_url: "assets/default_profile_picture.png",
+  caption: "random photo2",
+  location: "random location2",
+  poster_id: 1)

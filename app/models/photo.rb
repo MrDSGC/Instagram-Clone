@@ -1,11 +1,11 @@
 class Photo < ApplicationRecord
   validates :img_url, :poster_id, presence: true
 
-  belongs_to: :poster,
+  belongs_to :poster,
   foreign_key: :poster_id,
   class_name: "User"
 
-  
+
   #has_many :comments
   #has_many :likes
 

@@ -6,16 +6,22 @@
 
 **MainPageContainer**
  - NavContainer
- - ProfileContainer/MainFeedContainer 
+ - ProfileContainer/MainFeedContainer
 
 **NavContainer**
  - Search
   - SearchResultsIndex
 
-**ProfileContainer**
+**ProfilePageContainer**
  - Profile
- - ProfilePhotoIndex
+ - PhotoIndexContainer
 
+ **PhotoIndexContainer**
+ - PhotoIndex
+
+ **ProfileDetailContainer**
+ - ProfileDetails
+ 
 **EditProfileContainer**
  - Header
  - ProfileInfoForm
@@ -52,7 +58,7 @@
 | "/login" | "AuthFormContainer" |
 | "/signup" | "AuthFormContainer" |
 | "/main" | "MainPageContainer" |
-| "/:username" | "ProfileContainer" |
+| "/:username" | "ProfilePageContainer" |
 | "/:username/edit" | "EditProfileContainer" |
 | "/:username/:id" | "PhotoContainer" |
 | "/:username/upload" | "PhotoFormContainer" |

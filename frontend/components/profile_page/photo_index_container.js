@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
-import { login, receiveErrors } from '../../actions/session_actions';
+import { fetchPhotos } from '../../actions/photo_actions';
 import PhotoIndex from './photo_index';
 
 
-const mapStateToProps = (state) => {
-  debugger
-  return {
-  }
+const mapStateToProps = (state, ownProps) => {
+  return ({
+    username: ownProps.username,
+    photos: state.photos.photos
+  })
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPhotos: userId => dispatch(userId)
+    fetchPhotos: userId => dispatch(fetchPhotos(userId))
   };
 };
 

@@ -1,7 +1,8 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    @photos = Photo.where(poster_id: params[:id])
+    poster = User.find_by(username: params[:username])
+    @photos = Photo.where(poster_id: poster.id)
     render 'api/photos/index'
   end
 
@@ -15,7 +16,7 @@ class Api::PhotosController < ApplicationController
     @photo.poster_id = current_user.id
 
     if @photo.save
-      render 'api/photo/show'
+      render 'api/photo/index'
     else
       render json: @photo.errors.full_messages, status: 422
     end

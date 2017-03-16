@@ -3,7 +3,6 @@ import { hashHistory } from 'react-router';
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
-export const REMOVE_PHOTO = "REMOVE_PHOTO";
 
 export const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
@@ -15,13 +14,9 @@ export const receivePhoto = photo => ({
   photo
 });
 
-export const removePhoto = photo => ({
-  type: REMOVE_PHOTO,
-  photo
-});
 
-export const fetchPhotos = userId => dispatch => (
-  APIUtil.getPhotos(userId)
+export const fetchPhotos = username => dispatch => (
+  APIUtil.getPhotos(username)
     .then(photos => dispatch(receivePhotos(photos)))
 );
 
@@ -35,11 +30,8 @@ export const uploadPhoto = photo => dispatch => (
     .then(uploadedPhoto => dispatch(receivePhoto(uploadedPhoto)))
 );
 
- //need to redirect to /:username
 export const destroyPhoto = photoId => dispatch => (
   APIUtil.deletePhoto(photoId)
-    .then(photo => {
-      dispatch(removePhoto(photo))
-      hashHistory.push("/")
+    .then(photo => {hashHistory.push(`/${photo.poster.username}`)
     })
 );

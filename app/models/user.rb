@@ -4,7 +4,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: {minimum: 8, allow_nil: true}
 
-  # has_many: :photos
+  has_many :photos,
+  foreign_key: :poster_id,
+  class_name: "Photo"
 
   attr_reader :password
   after_initialize :ensure_session_token

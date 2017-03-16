@@ -12,7 +12,7 @@
     1: {
       img_url: "Sample State",
       caption: "this is a photo",
-      poster_id: 1,
+      poster: {poster obj},
       likers: [],
       created_at: "date",
       location: "sample location"

@@ -1,7 +1,6 @@
 import {
   RECEIVE_PHOTOS,
-  RECEIVE_PHOTO,
-  REMOVE_PHOTO } from '../actions/photo_actions';
+  RECEIVE_PHOTO,} from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
 const initialState = {
@@ -19,9 +18,6 @@ const SessionReducer = (state = initialState, action) => {
     case RECEIVE_PHOTO:
       const photo = action.photo
       return merge(newState, {currentPhoto: photo});
-    case REMOVE_PHOTO:
-      delete newState.photos[action.photo];
-      return newState;
     default:
       return state;
   }
