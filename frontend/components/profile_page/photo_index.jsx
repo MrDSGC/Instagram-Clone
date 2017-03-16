@@ -3,13 +3,13 @@ import { Link, withRouter } from 'react-router';
 import FontAwesome from 'react-fontawesome'
 import Modal from "react-modal"
 import PhotoContainer from '../photo/photo_container'
-import {style} from './modal_style'
 
 class PhotoIndex extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
       modalOpen: false,
+      photoId: null
     }
     this.handleClick = this.handleClick.bind(this)
     this.onModalClose = this.onModalClose.bind(this)
@@ -19,12 +19,14 @@ class PhotoIndex extends React.Component {
     this.props.fetchPhotos(this.props.username);
   }
 
-  handleClick() {
-    this.setState({ modalOpen: true})
+  handleClick(id) {
+    return () =>{
+      this.setState({ modalOpen: true, photoId: id})
+    }
   }
 
   onModalClose () {
-    this.setState({ modalOpen:false })
+    this.setState({ modalOpen:false, photoId: null })
   }
 
   render() {
@@ -34,13 +36,13 @@ class PhotoIndex extends React.Component {
           { this.props.photos.map((photo)=> {
             return(
               <li key={photo.id} className="profile-photo-index-item">
-                <div className="hover-graphic" onClick={ this.handleClick() }>
+                <div className="hover-graphic" onClick={ this.handleClick(photo.id) }>
                   <div className="likes">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <i className="fa fa-heart" aria-hidden="true"></i>
                     {photo.like_count}
                   </div>
                   <div className="comments">
-                    <i class="fa fa-comment" aria-hidden="true"></i>
+                    <i className="fa fa-comment" aria-hidden="true"></i>
                     {photo.like_comment}
                   </div>
 
@@ -53,9 +55,11 @@ class PhotoIndex extends React.Component {
         <Modal
           isOpen={this.state.modalOpen}
           onRequestClose={this.onModalClose}
-          style={style} >
-          <PhotoContainer/>
-          <button onClick={this.onModalClose}>X</button>
+          className="profile-modal"
+          overlayClassName="profile-modal-overlay"
+          contentLabel="">
+          <PhotoContainer photoId={this.state.photoId}/>
+          <button className="modal-exit" onClick={this.onModalClose}>X</button>
         </Modal>
       </div>
     )

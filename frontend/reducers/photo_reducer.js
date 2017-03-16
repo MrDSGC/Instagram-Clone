@@ -4,7 +4,14 @@ import {
 import merge from 'lodash/merge';
 
 const initialState = {
-  currentPhoto: null,
+  currentPhoto: {
+    img_url: "",
+    caption: "",
+    poster: {},
+    likers: [],
+    location: "",
+    comments: []
+  },
   photos: []
 };
 
@@ -13,11 +20,9 @@ const SessionReducer = (state = initialState, action) => {
   let newState = merge({}, state)
   switch(action.type) {
     case RECEIVE_PHOTOS:
-      const photos = action.photos;
       return merge(newState, {photos: action.photos});
     case RECEIVE_PHOTO:
-      const photo = action.photo
-      return merge(newState, {currentPhoto: photo});
+      return merge(newState, {currentPhoto: action.photo});
     default:
       return state;
   }

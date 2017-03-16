@@ -1,0 +1,36 @@
+.photo {
+  width: 600px;
+  height: 600px;
+}
+
+
+.profile-photo {
+  border-radius: 50%;
+  width:40px;
+  height: 40px;
+}
+
+.inside-profile-modal {
+  display:flex;
+  flex-direction: row;
+}
+
+.comments-here {
+  background-color: rgba(0,0,0,0.9)
+}
+
+.modal-exit {
+  position:fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-weight:600;
+  color: white;
+  font-size: 40px;
+}
+
+.modal-exit:hover {
+  background-color: rgba(0,0,0,0.9)
+}

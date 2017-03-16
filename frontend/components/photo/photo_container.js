@@ -5,19 +5,20 @@ import {
 import Photo from './photo';
 
 const mapStateToProps = (state) => {
-  return {
-    currentPhoto: this.state.currentPhoto
-  }
+  return ({
+    currentPhoto: state.photos.currentPhoto
+  })
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),
-    destroyPhoto: photoid => dispatch(destroyPhoto(photoId))
+    destroyPhoto: photoId => dispatch(destroyPhoto(photoId)),
+    updatePhoto: photo => dispatch(updatePhoto(photo))
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Photo);

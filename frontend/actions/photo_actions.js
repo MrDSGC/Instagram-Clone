@@ -30,6 +30,11 @@ export const uploadPhoto = photo => dispatch => (
     .then(uploadedPhoto => dispatch(receivePhoto(uploadedPhoto)))
 );
 
+export const updatePhoto = photo => dispatch => (
+  APIUtil.patchPhoto(photo)
+    .then(editedPhoto => dispatch(receivePhoto(editedPhoto)))
+)
+
 export const destroyPhoto = photoId => dispatch => (
   APIUtil.deletePhoto(photoId)
     .then(photo => {hashHistory.push(`/${photo.poster.username}`)
