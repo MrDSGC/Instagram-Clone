@@ -26,7 +26,7 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
 
     if @photo.update(photo_params)
-      render 'api/photo/show'
+      render :show
     else
       render json: @photo.errors.full_messages, status: 422
     end
@@ -45,7 +45,7 @@ class Api::PhotosController < ApplicationController
 
   private
 
-  def photos_param
-    params.require(:photo).permit(:img_url)
+  def photo_params
+    params.require(:photo).permit(:img_url, :location, :caption)
   end
 end

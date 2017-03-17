@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import {
   destroyPhoto,
-  fetchPhoto } from '../../actions/photo_actions';
+  fetchPhoto,
+  updatePhoto} from '../../actions/photo_actions';
 import Photo from './photo';
 
 const mapStateToProps = (state) => {

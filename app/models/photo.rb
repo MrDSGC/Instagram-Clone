@@ -32,7 +32,7 @@ class Photo < ApplicationRecord
     elsif age_hours < 24
       return "#{age_hours} hr"
     elsif  age_days < 7
-      return "#{age_days} d"
+      return "#{age_days.round} d"
     else
       return "#{age_weeks} w"
     end

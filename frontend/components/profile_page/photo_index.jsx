@@ -39,11 +39,11 @@ class PhotoIndex extends React.Component {
                 <div className="hover-graphic" onClick={ this.handleClick(photo.id) }>
                   <div className="likes">
                     <i className="fa fa-heart" aria-hidden="true"></i>
-                    {photo.like_count}
+                    10
                   </div>
                   <div className="comments">
                     <i className="fa fa-comment" aria-hidden="true"></i>
-                    {photo.like_comment}
+                    10
                   </div>
 
                 </div>
