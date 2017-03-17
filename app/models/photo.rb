@@ -5,13 +5,22 @@ class Photo < ApplicationRecord
   foreign_key: :poster_id,
   class_name: "User"
 
+  has_many :likes,
+  class_name: "Like"
+
+  has_many :likers,
+  through: :likes,
+  source: :liker
 
   #has_many :comments
-  #has_many :likes
 
   def like_count
     self.likes.count
   end
+
+  def like_count_minus_one
+    self.likes.count - 1
+  end 
 
   def comment_count
     self.comment.count

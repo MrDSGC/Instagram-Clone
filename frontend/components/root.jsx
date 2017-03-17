@@ -10,10 +10,10 @@ import ProfilePageContainer from './profile_page/profile_page_container'
 
 const Root = ({ store }) => {
 
-  const _redirectIfLoggedIn = (nextState, replace) => {
+  const _redirectIfLoggedIn = (nextState) => {
     const currentUser = store.getState().session.currentUser;
     if(currentUser) {
-      replace(`/${currentUser.username}`)
+      hashHistory.push(`/${currentUser.username}`)
     }
   }
   const _ensureLoggedIn = (nextState, replace) => {
@@ -23,10 +23,15 @@ const Root = ({ store }) => {
     }
   };
 
+  const _sendToSplash = (nextState) => {
+    hashHistory.push(`/login`)
+  }
+
   return(
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
+          <IndexRoute onEnter={ _sendToSplash }/>
           <Route path='/splash' component={ Splashpage }>
             <Route
               path="/login"

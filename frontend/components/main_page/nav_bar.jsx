@@ -26,7 +26,9 @@ class NavBar extends React.Component {
   render () {
     return (
       <div className="nav-bar">
-        <div className="logo"></div>
+        <div className="logo">
+					<img className="nav-logo" src="http://res.cloudinary.com/mrdsgc/image/upload/v1489783791/festisite_instagram_s8d3bq.png"/>
+        </div>
         <div className="SearchBar"></div>
         <ul className="nav-buttons">
           <li className="profile-nav">P</li>
@@ -39,7 +41,7 @@ class NavBar extends React.Component {
           className="upload-modal"
           overlayClassName="upload-modal-overlay"
           contentLabel="">
-          <UploadPhotoFormContainer/>
+          <UploadPhotoFormContainer onModalClose={this.onModalClose}/>
           <button className="modal-exit" onClick={this.onModalClose}>X</button>
         </Modal>
       </div>

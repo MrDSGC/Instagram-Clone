@@ -4,6 +4,7 @@ import UploadPhotoForm from './upload_photo_form';
 
 const mapStateToProps = state => dispatch => {
   return {
+    photos: state.photos.photos,
     currentUser: state.session.currentUser
   }
 }

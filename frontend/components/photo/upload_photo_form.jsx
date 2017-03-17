@@ -2,6 +2,7 @@ import React from 'react'
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import { hashHistory } from 'react-router';
+import AlertContainer from 'react-alert'
 
 const CLOUDINARY_UPLOAD_PRESET = 'c1gtklzr';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/mrdsgc/upload';
@@ -10,6 +11,15 @@ const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/mrdsgc/upload';
 class UploadPhotoForm extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.alertOptions = {
+      offset: 14,
+      position: 'bottom left',
+      theme: 'dark',
+      time: 5000,
+      transition: 'scale'
+    };
+
 		this.state = {
       img_url: "",
       caption: "",
@@ -17,11 +27,20 @@ class UploadPhotoForm extends React.Component {
       uploadedFileCloudinaryUrl: ''
      };
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.updateIndex = this.updateIndex.bind(this);
+	}
+
+	showAlert(){
+    msg.show('Login required to upload photos! Redirecting to Login page...', {
+      time: 2000,
+      type: 'success'
+    });
 	}
 
   componentDidMount () {
     if(!this.props.currentUser) {
-      hashHistory.push("/login")
+			this.showAlert()
+      setTimeout(() => hashHistory.push("/login"), 10000)
     }
   }
 
@@ -58,6 +77,10 @@ class UploadPhotoForm extends React.Component {
     });
   }
 
+	updateIndex(uploaded) {
+		let newPhotos = this.props.photos.push(uploaded)
+		this.setState({ photos: newPhotos})
+	}
 
 	handleSubmit(e) {
 		e.preventDefault();
@@ -66,12 +89,14 @@ class UploadPhotoForm extends React.Component {
       caption: this.state.caption,
       location: this.state.location}
 		this.props.uploadPhoto(photo)
-      .then(hashHistory.push(`/`))
+			.then(upload => this.updateIndex(upload))
+      .then(this.props.onModalClose())
 	}
 
 	render() {
 		return (
 			<div className="photo-upload-modal">
+				<h1 className="upload-header">Photo Upload</h1>
 				<div className="photo-upload-form">
 					<form className="upload-form" onSubmit={this.handleSubmit} >
 						<div className="photo-upload-inputs">
@@ -90,7 +115,6 @@ class UploadPhotoForm extends React.Component {
                       <img className='photo-upload-preview' src={this.state.uploadedFileCloudinaryUrl} />
                     </div>}
                   </div>
-                  <h1 className="upload-header">Photo Upload</h1>
               </div>
               <div className="upload-description">
                 <input type="text"
@@ -108,6 +132,7 @@ class UploadPhotoForm extends React.Component {
 						</div>
 					</form>
         </div>
+				<AlertContainer ref={(a) => global.msg = a} {...this.alertOptions} />
 			</div>
 		);
 	}

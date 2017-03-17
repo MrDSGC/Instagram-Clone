@@ -29,27 +29,36 @@ class PhotoIndex extends React.Component {
     this.setState({ modalOpen:false, photoId: null })
   }
 
+	componentWillReceiveProps (nextProps) {
+		if (this.props.photos.length !== nextProps.photos.length) {
+			this.props.fetchPhotos(this.props.username);
+		}
+	}
+
   render() {
     return(
       <div>
         <ul className="profile-photo-index">
           { this.props.photos.map((photo)=> {
+						const backgroundPhoto = {
+							backgroundImage: `url('${photo.img_url}')`
+						}
             return(
               <li key={photo.id} className="profile-photo-index-item">
                 <div className="hover-graphic" onClick={ this.handleClick(photo.id) }>
 									<div className="index-info">
 										<div className="likes">
 											<i className="fa fa-heart" aria-hidden="true"></i>
-											10
+											{photo.likes}
 										</div>
 										<div className="comments">
-											<i className="fa fa-comment" aria-hidden="true"></i> 
+											<i className="fa fa-comment" aria-hidden="true"></i>
 											10
 										</div>
 									</div>
 
                 </div>
-                <img className='profile-index-img'src={photo.img_url}/>
+                <div className='profile-index-img'style={backgroundPhoto}></div>
               </li>
             )
           })}
@@ -60,7 +69,7 @@ class PhotoIndex extends React.Component {
           className="profile-modal"
           overlayClassName="profile-modal-overlay"
           contentLabel="">
-          <PhotoContainer photoId={this.state.photoId}/>
+          <PhotoContainer photoId={this.state.photoId} />
           <button className="modal-exit" onClick={this.onModalClose}>X</button>
         </Modal>
       </div>

@@ -16,7 +16,7 @@ class Api::PhotosController < ApplicationController
     @photo.poster_id = current_user.id
 
     if @photo.save
-      render :index
+      render :show
     else
       render json: @photo.errors.full_messages, status: 422
     end

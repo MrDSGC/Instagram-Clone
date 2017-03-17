@@ -5,9 +5,11 @@ import merge from 'lodash/merge';
 
 const initialState = {
   currentPhoto: {
+    id: "",
     img_url: "",
     caption: "",
     poster: {},
+    like_count_minus_one: "",
     likers: [],
     location: "",
     comments: []

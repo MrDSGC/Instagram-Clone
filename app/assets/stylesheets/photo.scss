@@ -83,11 +83,12 @@
   flex-direction: row;
   border-bottom: 1px solid #efefef;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .photo-info {
-  margin: 10px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .caption-wrap {
@@ -98,11 +99,23 @@
 .photo-info-left {
   float:left;
   display:inline;
+  font-weight: bold;
 }
 
 .photo-info-right {
   display:inline;
   float:right;
+  color: rgba(30,30,30,.4);
+}
+
+.profile-username {
+  margin-bottom: 5px;
+}
+
+.photo-info:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .caption {
@@ -116,6 +129,10 @@
   flex-direction: column;
   justify-content: flex-start;
 
+}
+
+.caption-wrap, .profile-username {
+  font-weight: bold;
 }
 
 .location-submit, .caption-submit {
