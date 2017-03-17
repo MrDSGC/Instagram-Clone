@@ -84,7 +84,6 @@ class Photo extends React.Component {
 
   handleSubmit(field) {
     return e => {
-      console.log(field);
       e.preventDefault();
       this.props.updatePhoto({[field]: this.state[field], id: this.props.currentPhoto.id})
       .then(this.toggle(field))
@@ -109,7 +108,6 @@ class Photo extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     let {currentPhoto} = this.props
     return(
       <div className="inside-profile-modal">
