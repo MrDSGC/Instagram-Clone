@@ -18,3 +18,18 @@
   + removing photos not working because photos state is an array
     - solved by bypassing REMOVE action and refetching after destroying photo from database
   + CSS much more difficult than first day. Work in progress
+
+
+**3/16**
+
+- Unfortunately did not fully complete images :( Still some 20% styling left  and 90% of photo upload functionality complete
+- feeling a bit more confident with CSS
+- super satisfied with react-upload function! (ty andrew)
+- Got 2nd modal up and styled 100x faster than 1st one
+- learned i can put debugger straight into jbuilder file
+
+- noteable bugs/challenges
+  + rails #created_at is not a DateTime className
+  + location and caption forms were not rendering at all because if statements in the 2 consts. split them into 4 consts and used terinary statement to render either
+  + location and caption forms altered to use same handlers with different field inputs
+  + Edit forms were not prefilled when first opened. super long debugging process due to the fact that there were bugs in multiple locations of the redux cycle (but got them all!!)

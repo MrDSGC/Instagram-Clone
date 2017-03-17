@@ -29,30 +29,32 @@ class Photo extends React.Component {
   locationOutput () {
     return (<div
       onDoubleClick={this.toggle("location")}
-      className="photo-location">{this.state.location}</div>
+      className="photo-location-output" >{this.state.location}  <i className="fa fa-pencil" aria-hidden="true"></i></div>
     )
   }
 
   locationForm() {
     return(
-      <form
-        onSubmit={this.handleSubmit("location")}
-        className="photo-location" >
-        <input
+      <form onSubmit={this.handleSubmit("location")} >
+        <textarea
           type='text'
+          className="photo-location"
           value={this.state.location} onChange={this.update("location")}/>
+        <input className="location-submit" type="submit" value="Update Location"/>
       </form>
     );
   };
 
   captionOutput() {
     return (
-      <div>
-        <Link to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
+      <div >
+        <Link
+          className="caption-wrap"
+          to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
         <div
           onDoubleClick={this.toggle("caption")}
-          className="photo-caption">
-          {this.state.caption}
+          className="photo-caption-output">
+          {this.state.caption}  <i className="fa fa-pencil" aria-hidden="true"></i>
         </div>
       </div>
     );
@@ -63,19 +65,21 @@ class Photo extends React.Component {
       <div>
         <Link to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
         <form
-          onSubmit={this.handleSubmit("caption")}
-          className="photo-caption">
+          onSubmit={this.handleSubmit("caption")} >
           <textarea
+            className="photo-caption"
             onChange={this.update("caption")}
             value={this.state.caption} />
-          <input type="submit" value="Update Caption"/>
+          <input className="caption-submit" type="submit" value="Update Caption"/>
         </form>
       </div>
       )
   };
 
   toggle(field) {
-    return() => this.setState({[field + "Edit" ]: !this.state[field + "Edit" ]})
+    if((this.props.currentUser !== null) && (this.props.currentPhoto.poster.id === this.props.currentUser.id)) {
+      return () => this.setState({[field + "Edit" ]: !this.state[field + "Edit" ]})
+    }
   }
 
   handleSubmit(field) {
@@ -115,12 +119,14 @@ class Photo extends React.Component {
             <img
               onClick={this.handleProfile(currentPhoto.poster.username)}
               className="profile-photo" src={currentPhoto.poster.profile_pic_url}/>
-            <Link to={`/${currentPhoto.poster.username}`}>{currentPhoto.poster.username}</Link>
-            {this.state.locationEdit ? this.locationForm() : this.locationOutput()}
+            <div className="poster-info-username">
+              <Link to={`/${currentPhoto.poster.username}`}>{currentPhoto.poster.username}</Link>
+              {this.state.locationEdit ? this.locationForm() : this.locationOutput()}
+            </div>
           </div>
           <div className="photo-info">
-            <div>{currentPhoto.likers.length} likes</div>
-            <div>{currentPhoto.age}</div>
+            <div className="photot-info-left">{currentPhoto.likers.length} likes</div>
+            <div className="photo-info-right">{currentPhoto.age}</div>
           </div>
           <div className="caption">
             {this.state.captionEdit ? this.captionForm() : this.captionOutput()}

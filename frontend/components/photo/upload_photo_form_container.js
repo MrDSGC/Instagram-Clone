@@ -1,5 +1,12 @@
 import { connect } from 'react-redux';
+import {uploadPhoto} from '../../actions/photo_actions'
 import UploadPhotoForm from './upload_photo_form';
+
+const mapStateToProps = state => dispatch => {
+  return {
+    currentUser: state.session.currentUser
+  }
+}
 
 const mapDispatchToProps = () => dispatch => {
   return {
@@ -7,6 +14,6 @@ const mapDispatchToProps = () => dispatch => {
   }
 }
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(UploadPhotoForm);

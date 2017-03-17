@@ -6,9 +6,10 @@ import {
 import Photo from './photo';
 
 const mapStateToProps = (state) => {
-  return ({
+  return {
+    currentUser: state.session.currentUser,
     currentPhoto: state.photos.currentPhoto
-  })
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
