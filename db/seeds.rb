@@ -11,7 +11,7 @@ User.create!(
   username: "guest",
   password: "guestpassword",
   biography: "Aspiring photographer",
-  profile_pic_url: "assets/default_profile_picture.png")
+  profile_pic_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/default_profile_picture_wxgufw.png")
 
 Photo.delete_all
 

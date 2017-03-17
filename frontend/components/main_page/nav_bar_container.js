@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
 
-const mapStateToProps = (state) => ({
-
-});
-
+const mapDispatchToProps = () => dispatch => {
+ {
+    //fetchUSers
+  }
+}
 
 export default connect(
-  mapStateToProps,
+  null,
   null
 )(NavBar);

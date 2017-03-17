@@ -8,6 +8,7 @@
   border-radius: 50%;
   width:40px;
   height: 40px;
+  cursor: pointer;
 }
 
 .inside-profile-modal {
@@ -33,4 +34,18 @@
 
 .modal-exit:hover {
   background-color: rgba(0,0,0,0.9)
+}
+
+.photo-stuff {
+  padding: 20px;
+  width: 300px;
+}
+.photo-caption, .photo-location {
+  cursor: pointer;
+}
+
+.poster-info {
+  border-bottom: 1px solid #efefef;
+  width: 100%;
+  padding-bottom: 10px;
 }

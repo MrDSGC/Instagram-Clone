@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
 			<div className="login-component">
 				<div className="login-form">
 					<form onSubmit={this.handleSubmit} >
-						<img className="logo-header"src="/assets/logo.png"/>
+						<img className="logo-header"src="http://res.cloudinary.com/mrdsgc/image/upload/v1489707263/logo_lmxqhk.png"/>
 						<div className="login-inputs">
 							<input type="text"
 								className="inputs"

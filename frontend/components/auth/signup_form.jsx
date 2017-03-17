@@ -41,7 +41,7 @@ class SignUpForm extends React.Component {
 		return (
 			<div className="signup-component">
 				<div className="signup-form">
-					<img className="logo-header" src="/assets/logo.png"/>
+					<img className="logo-header" src="http://res.cloudinary.com/mrdsgc/image/upload/v1489707263/logo_lmxqhk.png"/>
 					<form onSubmit={this.handleSubmit} >
 						<div className="signup-inputs">
 							<input type="text"

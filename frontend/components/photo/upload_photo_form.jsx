@@ -1,4 +1,8 @@
-class SessionForm extends React.Component {
+import React from 'react'
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
+class UploadPhotoForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { img_url: "", caption: "", location: "" };
@@ -24,9 +28,9 @@ class SessionForm extends React.Component {
 				<div className="photo-upload-form">
 					<form onSubmit={this.handleSubmit} >
 						<div className="photo-upload-inputs">
-							<input type="text"
+							<textarea
 								className="inputs"
-								value={this.state.username}
+								value={this.state.caption}
 								placeholder="Write a Caption!"
 								onChange={this.update("location")}/>
               <input type="text"
@@ -37,10 +41,11 @@ class SessionForm extends React.Component {
               <input type="submit" value="Submit" className="photo-upload-submit" />
 						</div>
 					</form>
+        </div>
 			</div>
 		);
 	}
 
 }
 
-export default withRouter(SessionForm);
+export default UploadPhotoForm;

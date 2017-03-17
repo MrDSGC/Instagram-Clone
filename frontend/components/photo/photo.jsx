@@ -47,23 +47,30 @@ class Photo extends React.Component {
 
   captionOutput() {
     return (
-      <div
-        onDoubleClick={this.toggle("caption")}
-        className="photo-caption">
-        {this.state.caption}
+      <div>
+        <Link to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
+        <div
+          onDoubleClick={this.toggle("caption")}
+          className="photo-caption">
+          {this.state.caption}
+        </div>
       </div>
     );
   };
 
   captionForm () {
     return(
-      <form
-        onSubmit={this.handleSubmit("caption")}
-        className="photo-caption">
+      <div>
+        <Link to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
+        <form
+          onSubmit={this.handleSubmit("caption")}
+          className="photo-caption">
           <textarea
             onChange={this.update("caption")}
             value={this.state.caption} />
+          <input type="submit" value="Update Caption"/>
         </form>
+      </div>
       )
   };
 

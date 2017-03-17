@@ -49,14 +49,21 @@
   background-color: rgba(0,0,0,0);
   position: absolute;
 
-
+}
+.likes, .comments {
+  margin: 20px;
+  z-index: 1
 }
 
-.likes, .comments {
-  height: 200px;
-  width: 400px;
-  position:absolute;
-  z-index: 1
+.index-info {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  font-size: 20px;
+  color: white;
 }
 
 .hover-i {
@@ -68,12 +75,19 @@
 .hover-graphic:hover {
   background-color: rgba(0,0,0, .35);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .index-info {
+    visibility: visible;
+  }
 }
 
 .profile-modal {
   width: 935px;
   height: 600px;
   background-color: white;
+  outline: none;
 }
 
 .profile-modal-overlay {
