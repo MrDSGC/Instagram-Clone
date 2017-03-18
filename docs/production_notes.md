@@ -33,3 +33,11 @@
   + location and caption forms were not rendering at all because if statements in the 2 consts. split them into 4 consts and used terinary statement to render either
   + location and caption forms altered to use same handlers with different field inputs
   + Edit forms were not prefilled when first opened. super long debugging process due to the fact that there were bugs in multiple locations of the redux cycle (but got them all!!)
+
+  **3/17**
+
+  - completed fully functioning images and styled!
+  - made root index for splash page
+  - added some toggles
+  - likes were more difficult than anticipated
+  
