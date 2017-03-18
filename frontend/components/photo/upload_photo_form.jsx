@@ -89,7 +89,6 @@ class UploadPhotoForm extends React.Component {
       caption: this.state.caption,
       location: this.state.location}
 		this.props.uploadPhoto(photo)
-			.then(upload => this.updateIndex(upload))
       .then(this.props.onModalClose())
 	}
 

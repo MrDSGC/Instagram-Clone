@@ -19,8 +19,12 @@ class Photo < ApplicationRecord
   end
 
   def like_count_minus_one
-    self.likes.count - 1
-  end 
+    if self.likes.count - 1 < 0
+      0
+    else
+      self.likes.count - 1
+    end
+  end
 
   def comment_count
     self.comment.count

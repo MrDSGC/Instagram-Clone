@@ -17,22 +17,22 @@ Photo.delete_all
 
 
 Photo.create!(
-  img_url: "assets/default_profile_picture.png",
+  img_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489785260/hmuc0cupcefqrzxrrwb2.png",
   caption: "random photo2",
   location: "random location2",
   poster_id: 1)
 Photo.create!(
-  img_url: "assets/default_profile_picture.png",
+  img_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489785260/hmuc0cupcefqrzxrrwb2.png",
   caption: "random photo2",
   location: "random location2",
   poster_id: 1)
 Photo.create!(
-  img_url: "assets/default_profile_picture.png",
+  img_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489785260/hmuc0cupcefqrzxrrwb2.png",
   caption: "random photo2",
   location: "random location2",
   poster_id: 1)
 Photo.create!(
-  img_url: "assets/default_profile_picture.png",
+  img_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489785260/hmuc0cupcefqrzxrrwb2.png",
   caption: "random photo2",
   location: "random location2",
   poster_id: 1)

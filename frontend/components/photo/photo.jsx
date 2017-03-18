@@ -103,24 +103,26 @@ class Photo extends React.Component {
 
   handleLike(e) {
       e.preventDefault();
+
       if(this.state.liked){
           this.props.removeLike({
             liker_id: this.props.currentUser.id,
             photo_id: this.props.photoId
           })
+          this.toggle_like();
       } else {
         this.props.addLike({
         liker_id: this.props.currentUser.id,
         photo_id: this.props.photoId})
+        this.toggle_like();
       }
-      this.toggle_like();
   }
 
   likeCount () {
     if(this.state.liked) {
-      return ( this.props.currentPhoto.like_count_minus_one)
-    } else {
       return ( this.props.currentPhoto.like_count_minus_one + 1)
+    } else {
+      return ( this.props.currentPhoto.like_count_minus_one)
     }
   }
 
@@ -130,6 +132,7 @@ class Photo extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhoto(this.props.photoId)
+      .then(this.setState({ liked: this.props.liked }))
   }
 
   editOutput() {

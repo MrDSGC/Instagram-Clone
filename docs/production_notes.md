@@ -40,4 +40,12 @@
   - made root index for splash page
   - added some toggles
   - likes were more difficult than anticipated
-  
+
+
+  **3/18**
+
+  - finally uploaded to heroku!
+
+  - noteable bugs/challenges
+    + cant view photos with undefined currentUser
+    + background fill alters picture dimensions

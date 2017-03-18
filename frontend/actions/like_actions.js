@@ -6,5 +6,5 @@ export const addLike = like => (
 );
 
 export const removeLike = like => (
-  APIUtil.deleteLike(like.id)
+  APIUtil.deleteLike(like)
 );
