@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create]
     resources :photos, only: [:create, :destroy, :show, :update, :index]
-    resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:create] do
+      delete 'likes/:photo_id' => 'likes#destroy_by_photo_id', as: :destroy_by_photo_id
+    end
   end
 
 end

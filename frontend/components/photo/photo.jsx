@@ -103,18 +103,17 @@ class Photo extends React.Component {
 
   handleLike(e) {
       e.preventDefault();
-      this.toggle_like();
       if(this.state.liked){
           this.props.removeLike({
             liker_id: this.props.currentUser.id,
             photo_id: this.props.photoId
           })
       } else {
-        debugger
         this.props.addLike({
         liker_id: this.props.currentUser.id,
         photo_id: this.props.photoId})
       }
+      this.toggle_like();
   }
 
   likeCount () {

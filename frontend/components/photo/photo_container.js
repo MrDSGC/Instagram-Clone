@@ -7,8 +7,10 @@ import {addLike, removeLike} from '../../actions/like_actions';
 import Photo from './photo';
 
 const mapStateToProps = (state) => {
+  const liker_ids = state.photos.currentPhoto.likers.map((user)=> user.id)
+  const currentUserId = state.session.currentUser.id
   return {
-    liked: (state.photos.currentPhoto.likers.indexOf(state.session.curretnUser) > -1),
+    liked: (liker_ids.indexOf(currentUserId) > -1),
     currentUser: state.session.currentUser,
     currentPhoto: state.photos.currentPhoto
   }

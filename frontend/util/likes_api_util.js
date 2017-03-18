@@ -6,16 +6,9 @@ export const postLike = (like) => {
   });
 }
 
-export const deleteLike = (id) => {
+export const deleteLike = (like) => {
   return $.ajax({
     method:"DELETE",
-    url:`api/likes/${id}`
+    url:`api/likes/${like.photo_id}`
   });
 };
-
-export const getLikes = (photo_id) => {
-  return $.ajax({
-    method: "GET",
-    url:`api/likes/`
-  })
-}

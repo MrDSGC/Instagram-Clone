@@ -17,7 +17,7 @@ const initialState = {
   photos: []
 };
 
-const SessionReducer = (state = initialState, action) => {
+const PhotoReducer = (state = initialState, action) => {
   Object.freeze(state)
   let newState = merge({}, state)
   switch(action.type) {
@@ -30,4 +30,4 @@ const SessionReducer = (state = initialState, action) => {
   }
 };
 
-export default SessionReducer;
+export default PhotoReducer;

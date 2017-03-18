@@ -40,7 +40,7 @@ class UploadPhotoForm extends React.Component {
   componentDidMount () {
     if(!this.props.currentUser) {
 			this.showAlert()
-      setTimeout(() => hashHistory.push("/login"), 10000)
+      setTimeout(() => hashHistory.push("/login"), 5000)
     }
   }
 
