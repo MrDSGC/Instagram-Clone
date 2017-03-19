@@ -14,7 +14,7 @@ export const login = user => dispatch => (
   APIUtil.login(user)
     .then(user => {
       dispatch(receiveCurrentUser(user))
-      hashHistory.push(`/${user.username}`)
+      hashHistory.push(`/feed`)
     })
     .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );

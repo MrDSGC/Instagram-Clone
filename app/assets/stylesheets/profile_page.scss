@@ -10,7 +10,7 @@
 
 .profile-details {
   height: 230px;
-  background-color: cyan;
+  border: 1px dashed black;
   width:1000px;
 }
 
@@ -88,7 +88,6 @@
 
 .profile-modal {
   width: 935px;
-  height: 600px;
   background-color: white;
   outline: none;
 }

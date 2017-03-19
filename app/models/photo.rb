@@ -12,7 +12,8 @@ class Photo < ApplicationRecord
   through: :likes,
   source: :liker
 
-  #has_many :comments
+  has_many :comments,
+  class_name: "Comment"
 
   def like_count
     self.likes.count
@@ -27,11 +28,7 @@ class Photo < ApplicationRecord
   end
 
   def comment_count
-    self.comment.count
-  end
-
-  def feed
-    #Photo.user.following.photos
+    self.comments.count
   end
 
   def age

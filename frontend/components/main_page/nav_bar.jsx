@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import FontAwesome from 'react-fontawesome';
 import Modal from "react-modal";
 import UploadPhotoFormContainer from '../photo/upload_photo_form_container';
@@ -7,7 +7,9 @@ import UploadPhotoFormContainer from '../photo/upload_photo_form_container';
 class NavBar extends React.Component {
 	constructor(props) {
 		super(props);
+
     this.onModalClose = this.onModalClose.bind(this)
+    this.toProfile = this.toProfile.bind(this)
     this.state = {
       modalOpen: false,
     }
@@ -23,16 +25,27 @@ class NavBar extends React.Component {
     }
   }
 
+	toHomepage(e) {
+		e.preventDefault();
+		hashHistory.push("/")
+	}
+
+	toProfile(e) {
+		e.preventDefault();
+		hashHistory.push(`/${this.props.currentUser.username}`)
+	}
+
   render () {
     return (
       <div className="nav-bar">
         <div className="logo">
-					<img className="nav-logo" src="http://res.cloudinary.com/mrdsgc/image/upload/v1489783791/festisite_instagram_s8d3bq.png"/>
+					<img className="nav-logo" onClick={this.toHomepage} src="http://res.cloudinary.com/mrdsgc/image/upload/v1489783791/festisite_instagram_s8d3bq.png"/>
         </div>
         <div className="SearchBar"></div>
         <ul className="nav-buttons">
-          <li className="profile-nav">P</li>
-          <li onClick={this.modalOpen()}className="upload-nav">UP</li>
+          <li className="profile-nav" onClick={this.toProfile}><i className="fa fa-user" aria-hidden="true"></i></li>
+          <li onClick={this.modalOpen()}className="upload-nav">
+						<i className="fa fa-upload" aria-hidden="true"></i></li>
         </ul>
 
         <Modal

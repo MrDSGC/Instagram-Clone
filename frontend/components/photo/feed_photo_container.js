@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
 
-class Photo extends React.Component {
+class FeedPhoto extends React.Component {
   constructor(props) {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -185,4 +185,4 @@ class Photo extends React.Component {
   };
 }
 
-export default Photo;
+export default FeedPhoto;

@@ -8,6 +8,10 @@ class User < ApplicationRecord
   foreign_key: :liker_id,
   class_name: "Like"
 
+  has_many :comments,
+  foreign_key: :comment_author_id,
+  class_name: "Comment"
+
   attr_reader :password
   after_initialize :ensure_session_token
 

@@ -7,13 +7,14 @@ import SessionFormContainer from './auth/session_form_container'
 import SignUpFormContainer from './auth/signup_form_container'
 import MainPageContainer from './main_page/main_page_container'
 import ProfilePageContainer from './profile_page/profile_page_container'
+import FeedIndexContainer from './main_page/feed_index_container'
 
 const Root = ({ store }) => {
 
   const _redirectIfLoggedIn = (nextState) => {
     const currentUser = store.getState().session.currentUser;
     if(currentUser) {
-      hashHistory.push(`/${currentUser.username}`)
+      hashHistory.push(`/feed`)
     }
   }
   const _ensureLoggedIn = (nextState, replace) => {
@@ -43,6 +44,7 @@ const Root = ({ store }) => {
               onEnter={ _redirectIfLoggedIn } />
           </Route>
           <Route path='/main' component = { MainPageContainer }>
+            <Route path='/feed' component = { FeedIndexContainer } />
             <Route path='/:username' component = { ProfilePageContainer }/>
           </Route>
         </Route>

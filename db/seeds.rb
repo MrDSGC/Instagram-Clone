@@ -9,9 +9,79 @@ User.delete_all
 
 User.create!(
   username: "guest",
-  password: "guestpassword",
+  password: "asdf",
   biography: "Aspiring photographer",
   profile_pic_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/default_profile_picture_wxgufw.png")
+User.create!(
+  username: "Jennifer",
+  password: "asdf",
+  biography: "Entrepreneur / Philanthropist",
+  profile_pic_url: "")
+User.create!(
+  username: "Mark",
+  password: "asdf",
+  biography: "Dancer | Explorer | Photographer",
+  profile_pic_url: "")
+User.create!(
+  username: "John",
+  password: "asdf",
+  biography: "Traveling the world!",
+  profile_pic_url: "")
+User.create!(
+  username: "Mary",
+  password: "asdf",
+  biography: "Actor, Blogger, Filmmaker and Photographer",
+  profile_pic_url: "")
+User.create!(
+  username: "Michelle",
+  password: "asdf",
+  biography: "Aspiring Entrepreneur",
+  profile_pic_url: "")
+User.create!(
+  username: "Daniel",
+  password: "asdf",
+  biography: "Software Engineer",
+  profile_pic_url: "")
+User.create!(
+  username: "Candra",
+  password: "asdf",
+  biography: "TravelBlogger",
+  profile_pic_url: "")
+User.create!(
+  username: "Paul",
+  password: "asdf",
+  biography: "Welcome to my profile! I take pictures for fun",
+  profile_pic_url: "")
+User.create!(
+  username: "Leo",
+  password: "asdf",
+  biography: "",
+  profile_pic_url: "")
+User.create!(
+  username: "Andrew",
+  password: "asdf",
+  biography: "",
+  profile_pic_url: "")
+User.create!(
+  username: "Gage",
+  password: "asdf",
+  biography: "",
+  profile_pic_url: "")
+User.create!(
+  username: "Robert",
+  password: "asdf",
+  biography: "",
+  profile_pic_url: "")
+User.create!(
+  username: "Debra",
+  password: "asdf",
+  biography: "",
+  profile_pic_url: "")
+User.create!(
+  username: "Louis",
+  password: "asdf",
+  biography: "",
+  profile_pic_url: "")
 
 Photo.delete_all
 

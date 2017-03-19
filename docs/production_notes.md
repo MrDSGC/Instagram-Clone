@@ -40,12 +40,17 @@
   - made root index for splash page
   - added some toggles
   - likes were more difficult than anticipated
+  - low day
 
 
   **3/18**
 
   - finally uploaded to heroku!
+  - functioning backend for likes! still stuck with front end...
+  - began comment phase
+  - began collecting seed photos...
+  - made feed page 
 
   - noteable bugs/challenges
     + cant view photos with undefined currentUser
-    + background fill alters picture dimensions
+    + background fill alters picture dimensions - fixed with not hardcoding width and height for modal dimension

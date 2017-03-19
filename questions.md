@@ -3,29 +3,38 @@
 *STYLING*
 
 
-
-
 *FUCTIONAL*
 
-CANT REMOVE LIKES - this.state.liked is not changing after componentDidMount?
+
 
 **ANSWERED**
 
 
-
-
-
 **TO DO**
-
-how to make it auto select the text on double click - use this.select()
-
-holding down keys does not re-register keystroke? -change onChange to onKeypress
-Likes backend
-
-add like functionality to photos half done
-
-random console log bugs check dropzone docs
-
 
 
 **DONE TODAY**
+
+
+**BUG LIST**
+
+*MAJOR*
+-  likes not updating properly in photo.jsx state
+  +  0 likes until go to another photo with more than 0 likes and state is persisted between photos
+  + 1 less like upon opening
+
+
+*MINOR*
+
+- likes not updating in photo_index.jsx state
+
+- holding down keys does not re-register keystroke?
+  + use this.select()
+
+- how to make it auto select the text on double click
+  + change onChange to onKeypress
+
+- random console log bugs with dropzone
+  + check dropzone docs
+
+- cant scroll through show photos via left and right buttons

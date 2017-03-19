@@ -15,7 +15,10 @@ nav {
   float:left;
   height:45px;
   margin: 14px;
+  cursor: pointer;
 }
+
+
 .nav-buttons {
   float:right;
   display:flex;
@@ -23,15 +26,17 @@ nav {
   justify-content: flex-end;
   width: 150px;
   height: 50px;
-  margin: 5px;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .profile-nav, .upload-nav {
   width: 30px;
   height: 30px;
-  border: 1px solid black;
-  margin: 5px;
+  margin: 10px;
+  margin-top: 17px;
+  color: #b5b5b5;
+  font-size: 35px;
 }
 
 .upload-modal {
@@ -149,4 +154,20 @@ nav {
   border-radius: 3px;
   font-weight: 600;
   padding: 8px 0px;
+}
+
+.main-feed {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.feed-index {
+  border: 1px dashed black;
+  width: 600px;
+  height: 10000px;
+
 }

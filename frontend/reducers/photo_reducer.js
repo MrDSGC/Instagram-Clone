@@ -11,8 +11,7 @@ const initialState = {
     poster: {},
     like_count_minus_one: "",
     likers: [],
-    location: "",
-    comments: []
+    location: ""
   },
   photos: []
 };
