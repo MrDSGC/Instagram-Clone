@@ -9,77 +9,77 @@ User.delete_all
 
 User.create!(
   username: "guest",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Aspiring photographer",
   profile_pic_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/default_profile_picture_wxgufw.png")
 User.create!(
   username: "Jennifer",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Entrepreneur / Philanthropist",
   profile_pic_url: "")
 User.create!(
   username: "Mark",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Dancer | Explorer | Photographer",
   profile_pic_url: "")
 User.create!(
   username: "John",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Traveling the world!",
   profile_pic_url: "")
 User.create!(
   username: "Mary",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Actor, Blogger, Filmmaker and Photographer",
   profile_pic_url: "")
 User.create!(
   username: "Michelle",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Aspiring Entrepreneur",
   profile_pic_url: "")
 User.create!(
   username: "Daniel",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Software Engineer",
   profile_pic_url: "")
 User.create!(
   username: "Candra",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "TravelBlogger",
   profile_pic_url: "")
 User.create!(
   username: "Paul",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "Welcome to my profile! I take pictures for fun",
   profile_pic_url: "")
 User.create!(
   username: "Leo",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "",
   profile_pic_url: "")
 User.create!(
   username: "Andrew",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "",
   profile_pic_url: "")
 User.create!(
   username: "Gage",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "",
   profile_pic_url: "")
 User.create!(
   username: "Robert",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "",
   profile_pic_url: "")
 User.create!(
   username: "Debra",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "",
   profile_pic_url: "")
 User.create!(
   username: "Louis",
-  password: "asdf",
+  password: "asdfasdf",
   biography: "",
   profile_pic_url: "")
 
