@@ -13,9 +13,9 @@ export const postComment = (photo_id, comment) => {
   });
 };
 
-export const deleteComment = (photo_id, comment) => {
+export const deleteComment = (photo_id, comment_id) => {
   return $.ajax({
     method:"DELETE",
-    url:`api/photos/${photo_id}/comments/${comment.id}`
+    url:`api/photos/${photo_id}/comments/${comment_id}`
   });
 };

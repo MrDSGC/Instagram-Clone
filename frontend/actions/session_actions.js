@@ -19,8 +19,8 @@ export const login = user => dispatch => (
     .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const logout = () => dispatch => (
-  APIUtil.logout()
+export const logout = (id) => dispatch => (
+  APIUtil.logout(id)
   .then(user => {
     dispatch(receiveCurrentUser(null))
     hashHistory.push("/login")

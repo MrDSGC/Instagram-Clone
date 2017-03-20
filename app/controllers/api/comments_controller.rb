@@ -11,7 +11,8 @@ class Api::CommentsController < ApplicationController
       @comments = Comment.where(photo_id: params[:photo_id])
       render 'api/comments/index'
     else
-      render json: ["Comment can't be blank"] , status: 404}
+      render json: ["Comment can't be blank"] , status: 404
+    end
   end
 
   def destroy

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
+import CommentIndexContainer from '../comment/comment_index_container';
 
 class Photo extends React.Component {
   constructor(props) {
@@ -177,7 +178,7 @@ class Photo extends React.Component {
           </div>
 
           <div className="comments-here">
-
+            <CommentIndexContainer photoId={this.props.photoId} handleLike={this.props.handleLike}/>
           </div>
         </div>
       </div>

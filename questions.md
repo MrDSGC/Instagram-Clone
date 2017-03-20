@@ -2,9 +2,17 @@
 
 *STYLING*
 
+make comments section fill the rest of the space
 
-*FUCTIONAL*
 
+*FUNCTIONAL*
+
+Should i make a seperate FeedPhotoContainer/ Component and style differently?
+
+
+why do comments persist between photos if i call #componentDidMount and fetch a new photo id everytime for comment index?
+
+how to pass down #handle like to the comment_form_container
 
 
 **ANSWERED**
@@ -23,6 +31,7 @@
   +  0 likes until go to another photo with more than 0 likes and state is persisted between photos
   + 1 less like upon opening
 
+- comments not updating properly as well
 
 *MINOR*
 

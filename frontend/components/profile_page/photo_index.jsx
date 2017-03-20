@@ -49,11 +49,15 @@ class PhotoIndex extends React.Component {
 									<div className="index-info">
 										<div className="likes">
 											<i className="fa fa-heart" aria-hidden="true"></i>
-											{photo.likes}
+											<div className="photo-index-count">
+												{photo.likes}
+											</div>
 										</div>
 										<div className="comments">
 											<i className="fa fa-comment" aria-hidden="true"></i>
-											10
+											<div className="photo-index-count">
+												{photo.comments}
+											</div>
 										</div>
 									</div>
 

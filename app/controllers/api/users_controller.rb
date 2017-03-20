@@ -10,6 +10,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def find_by_username
+    @user = User.find_by(username: params[:username])
+
+    if @user
+      render 'api/users/show'
+    else
+      render json:  ["Does not exist"] , status: 404
+    end
+  end
+
   private
 
   def user_params

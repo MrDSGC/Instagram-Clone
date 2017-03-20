@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :users, only: [:create]
+    match 'users/:username' => 'users#find_by_username', :via => :get
 
     resources :likes, only: [:create]
     match 'likes/:photo_id' => 'likes#destroy_by_photo_id', :via => :delete

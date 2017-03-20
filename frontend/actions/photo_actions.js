@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/photos_api_util'
+import * as APIUtil from '../util/photos_api_util';
 import { hashHistory } from 'react-router';
 
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";

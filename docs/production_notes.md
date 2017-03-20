@@ -34,23 +34,37 @@
   + location and caption forms altered to use same handlers with different field inputs
   + Edit forms were not prefilled when first opened. super long debugging process due to the fact that there were bugs in multiple locations of the redux cycle (but got them all!!)
 
-  **3/17**
+**3/17**
 
-  - completed fully functioning images and styled!
-  - made root index for splash page
-  - added some toggles
-  - likes were more difficult than anticipated
-  - low day
+- completed fully functioning images and styled!
+- made root index for splash page
+- added some toggles
+- likes were more difficult than anticipated
+- low day
 
 
-  **3/18**
+**3/18**
 
-  - finally uploaded to heroku!
-  - functioning backend for likes! still stuck with front end...
-  - began comment phase
-  - began collecting seed photos...
-  - made feed page 
+- finally uploaded to heroku!
+- functioning backend for likes! still stuck with front end...
+- began comment phase
+- began collecting seed photos...
+- made feed page
 
-  - noteable bugs/challenges
-    + cant view photos with undefined currentUser
-    + background fill alters picture dimensions - fixed with not hardcoding width and height for modal dimension
+- noteable bugs/challenges
+  + cant view photos with undefined currentUser
+  + background fill alters picture dimensions - fixed with not hardcoding width and height for modal dimension
+
+
+**3/19**
+
+- after updating, heroku stopped working...
+- seeding data takes a long time
+- comments writeable and deleteable!!
+
+- noteable bugs/challenges
+  + highest like/comment state persists through different photos
+  + comments share key after deleting comment
+
+
+**3/20**

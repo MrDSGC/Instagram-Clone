@@ -10,6 +10,8 @@ class NavBar extends React.Component {
 
     this.onModalClose = this.onModalClose.bind(this)
     this.toProfile = this.toProfile.bind(this)
+    this.logoutUser = this.logoutUser.bind(this)
+
     this.state = {
       modalOpen: false,
     }
@@ -35,6 +37,11 @@ class NavBar extends React.Component {
 		hashHistory.push(`/${this.props.currentUser.username}`)
 	}
 
+	logoutUser(e) {
+		e.preventDefault();
+		this.props.logout(this.props.currentUser.id);
+	}
+
   render () {
     return (
       <div className="nav-bar">
@@ -43,9 +50,12 @@ class NavBar extends React.Component {
         </div>
         <div className="SearchBar"></div>
         <ul className="nav-buttons">
-          <li className="profile-nav" onClick={this.toProfile}><i className="fa fa-user" aria-hidden="true"></i></li>
+          <li className="profile-nav" onClick={this.toProfile}><i
+						className="fa fa-user" aria-hidden="true"></i></li>
           <li onClick={this.modalOpen()}className="upload-nav">
 						<i className="fa fa-upload" aria-hidden="true"></i></li>
+					<li className="logout-button"
+						onClick={this.logoutUser}><i className="fa fa-sign-out" aria-hidden="true"></i></li>
         </ul>
 
         <Modal
