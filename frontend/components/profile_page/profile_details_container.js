@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
-import {
-} from '../../actions/user_actions';
-import {addLike, removeLike} from '../../actions/like_actions';
+import {fetchUser} from '../../actions/user_actions';
 import ProfileDetails from './profile_details';
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = (state, ownProps) => {
+  return {
+    user: state.user,
+    username: ownProps.username,
+    photos: state.photos
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    fetchUser: username => dispatch(fetchUser(username))
   };
 };
 

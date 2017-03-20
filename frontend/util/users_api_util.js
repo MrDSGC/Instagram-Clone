@@ -4,3 +4,10 @@ export const getUser = (username) => {
     url:`api/users/${username}`
   })
 }
+
+export const getUsers = () => {
+  return $.ajax({
+    method: "GET",
+    url: `api/users/`
+  })
+}

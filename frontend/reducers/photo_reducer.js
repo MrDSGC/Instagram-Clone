@@ -3,27 +3,22 @@ import {
   RECEIVE_PHOTO,} from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
-const initialState = {
-  currentPhoto: {
-    id: "",
-    img_url: "",
-    caption: "",
-    poster: {},
-    like_count_minus_one: "",
-    likers: [],
-    location: ""
-  },
-  photos: []
+const initialState =  {
+  id: "",
+  img_url: "",
+  caption: "",
+  poster: {},
+  like_count_minus_one: "",
+  current_user_liked: false,
+  location: ""
 };
 
 const PhotoReducer = (state = initialState, action) => {
   Object.freeze(state)
   let newState = merge({}, state)
   switch(action.type) {
-    case RECEIVE_PHOTOS:
-      return merge(newState, {photos: action.photos});
     case RECEIVE_PHOTO:
-      return merge(newState, {currentPhoto: action.photo});
+      return action.photo
     default:
       return state;
   }

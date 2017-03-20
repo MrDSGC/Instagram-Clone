@@ -1,5 +1,5 @@
 import React from 'react';
-// import ProfileDetailsContainer from './profile_details_container';
+import ProfileDetailsContainer from './profile_details_container';
 import PhotoIndexContainer from './photo_index_container';
 
 class ProfilePage extends React.Component {
@@ -11,6 +11,7 @@ class ProfilePage extends React.Component {
     return(
       <div className="profile-page">
         <div className="profile-details">
+          <ProfileDetailsContainer username={this.props.username} />
         </div>
         <div className='profile-photos'>
           <PhotoIndexContainer username={this.props.username}/>
@@ -21,6 +22,5 @@ class ProfilePage extends React.Component {
 
 }
 
-// <ProfileDetailsContainer/>
 
 export default ProfilePage;

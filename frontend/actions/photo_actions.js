@@ -1,24 +1,12 @@
-import * as APIUtil from '../util/photos_api_util';
+import * as APIUtil from '../util/photo_api_util';
 import { hashHistory } from 'react-router';
 
-export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
-
-export const receivePhotos = photos => ({
-  type: RECEIVE_PHOTOS,
-  photos
-});
 
 export const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
   photo
 });
-
-
-export const fetchPhotos = username => dispatch => (
-  APIUtil.getPhotos(username)
-    .then(photos => dispatch(receivePhotos(photos)))
-);
 
 export const fetchPhoto = photoId => dispatch => (
   APIUtil.getPhoto(photoId)

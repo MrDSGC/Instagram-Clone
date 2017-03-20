@@ -6,13 +6,12 @@ import {
 import {addLike, removeLike} from '../../actions/like_actions';
 import Photo from './photo';
 
-const mapStateToProps = (state) => {
-  const liker_ids = state.photos.currentPhoto.likers.map((user)=> user.id)
-  const currentUserId = state.session.currentUser.id
+const mapStateToProps = (state, ownProps) => {
   return {
-    liked: (liker_ids.indexOf(currentUserId) > -1),
     currentUser: state.session.currentUser,
-    currentPhoto: state.photos.currentPhoto
+    currentPhoto: state.currentPhoto,
+    photoId: ownProps.photoId,
+    feed: ownProps.feed
   }
 };
 

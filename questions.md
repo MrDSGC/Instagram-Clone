@@ -2,24 +2,27 @@
 
 *STYLING*
 
-make comments section fill the rest of the space
+comments flex grow scrolling overflow
 
 
 *FUNCTIONAL*
 
-Should i make a seperate FeedPhotoContainer/ Component and style differently?
 
+when you enter a new page need to enter twice?
 
-why do comments persist between photos if i call #componentDidMount and fetch a new photo id everytime for comment index?
+like button not using correct "this"
 
 how to pass down #handle like to the comment_form_container
 
+navigating between users via profile button
 
 **ANSWERED**
 
+each photo container will have its own current photo in feed
 
 **TO DO**
 
+like errors
 
 **DONE TODAY**
 
@@ -30,8 +33,6 @@ how to pass down #handle like to the comment_form_container
 -  likes not updating properly in photo.jsx state
   +  0 likes until go to another photo with more than 0 likes and state is persisted between photos
   + 1 less like upon opening
-
-- comments not updating properly as well
 
 *MINOR*
 
@@ -47,3 +48,4 @@ how to pass down #handle like to the comment_form_container
   + check dropzone docs
 
 - cant scroll through show photos via left and right buttons
+  + do we have to close and open a new modal to do that?

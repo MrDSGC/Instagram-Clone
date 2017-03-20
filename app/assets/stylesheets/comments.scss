@@ -1,21 +1,25 @@
 .photo-comment-section {
   display:flex;
   flex-direction: column;
+  height:100%;
 }
 
 .photo-comment-index {
-  height: 200px;
   display: flex;
   flex-direction: column;
+  flex: 1;
   overflow: scroll;
   font-size: 15px;
 }
 
 .photo-comment-form {
+
   display:flex;
   flex-direction: row;
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
+
+  padding-left: 0;
   border-top: 1px solid #b5b5b5;
 }
 
@@ -36,6 +40,39 @@
   font-size: 20px;
   color: white;
   -webkit-text-stroke: 1px #b5b5b5;
-  margin-right: 5px;
+  margin-right: 10px;
   cursor: pointer;
+}
+
+.like-heart-red {
+  font-size: 20px;
+  color: red;
+  -webkit-text-stroke: 1px red;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.photo-comment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.profile-comment-username {
+  margin-right: 10px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.comment-here {
+  flex-wrap: wrap;
+}
+
+.remove-comment-button {
+  border: none;
+  background: none;
+  font-weight: 600;
+  color: #b5b5b5;
+  cursor: pointer;
+  font-size: 17px;
 }

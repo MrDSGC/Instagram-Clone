@@ -33,6 +33,10 @@ class PhotoIndex extends React.Component {
 		if (this.props.photos.length !== nextProps.photos.length) {
 			this.props.fetchPhotos(this.props.username);
 		}
+
+		if (this.props.username != nextProps.username) {
+			this.props.fetchPhotos(nextProps.username);
+		}
 	}
 
   render() {
@@ -73,7 +77,7 @@ class PhotoIndex extends React.Component {
           className="profile-modal"
           overlayClassName="profile-modal-overlay"
           contentLabel="">
-          <PhotoContainer photoId={this.state.photoId} />
+          <PhotoContainer photoId={this.state.photoId} feed={false}/>
           <button className="modal-exit" onClick={this.onModalClose}>X</button>
         </Modal>
       </div>

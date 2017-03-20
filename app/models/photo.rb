@@ -27,6 +27,7 @@ class Photo < ApplicationRecord
     end
   end
 
+
   def comment_count
     self.comments.count
   end

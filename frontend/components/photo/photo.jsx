@@ -20,14 +20,10 @@ class Photo extends React.Component {
       captionEdit: false,
       location: this.props.currentPhoto.location,
       caption: this.props.currentPhoto.caption,
-      liked: this.props.liked,
       currentUser: this.props.curentUser
     };
   }
 
-  // componentWillUnmount() {
-  //   this.setState({liked: []})
-  // }
 
   update(field) {
     return e => this.setState({
@@ -88,10 +84,6 @@ class Photo extends React.Component {
       )
   };
 
-  toggle_like() {
-    return() => this.setState({ liked: !this.state[liked]})
-  }
-
   toggle(field) {
     if((this.props.currentUser !== null) && (this.props.currentPhoto.poster.id === this.props.currentUser.id)) {
       return () => this.setState({[field + "Edit" ]: !this.state[field + "Edit" ]})
@@ -109,21 +101,21 @@ class Photo extends React.Component {
   handleLike(e) {
       e.preventDefault();
 
-      if(this.state.liked){
+      if(this.props.currentPhoto.current_user_liked){
           this.props.removeLike({
             liker_id: this.props.currentUser.id,
             photo_id: this.props.photoId
-          }).then(this.toggle_like())
+          }).then(() => this.props.fetchPhoto(this.props.photoId))
       } else {
         this.props.addLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.photoId
-        }).then(this.toggle_like())
+        }).then(() => this.props.fetchPhoto(this.props.photoId))
       }
-  }
+    }
 
   likeCount () {
-    if(this.state.liked) {
+    if(this.props.currentPhoto.current_user_liked) {
       return ( this.props.currentPhoto.like_count_minus_one + 1)
     } else {
       return ( this.props.currentPhoto.like_count_minus_one)
@@ -136,7 +128,6 @@ class Photo extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhoto(this.props.photoId)
-      .then(this.setState({ liked: this.props.liked }))
   }
 
   editOutput() {
@@ -152,12 +143,22 @@ class Photo extends React.Component {
         caption: nextProps.currentPhoto.caption
       })
     }
+
+    if(this.props.currentPhoto.current_user_liked != nextProps.currentPhoto.current_user_liked) {
+    }
   }
 
+  fp1() {
+    if (this.props.feed) {
+      return("inside-feed-index")
+    } else{
+      return("inside-profile-modal")
+    }
+  }
   render () {
     let {currentPhoto} = this.props
      return(
-      <div className="inside-profile-modal">
+      <div className={this.fp1()}>
         <img className="photo" src={currentPhoto.img_url} onDoubleClick={this.handleLike}/>
         <div className="photo-stuff">
           <div className="poster-info">

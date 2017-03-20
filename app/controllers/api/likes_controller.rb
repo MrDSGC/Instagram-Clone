@@ -3,9 +3,9 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     if @like.save
-      render {`api/likes/show`}
+      render :show
     else
-      render{'api/likes/show'}
+      render :show
     end
   end
 
@@ -13,7 +13,7 @@ class Api::LikesController < ApplicationController
     @likes = Like.where(photo_id: like_params[:photo_id])
     @like = @likes.find_by(liker_id: like_params[:liker_id])
     @like.destroy
-    render{`api/likes/show`}
+    render :show
   end
 
   private

@@ -12,6 +12,10 @@ class User < ApplicationRecord
   foreign_key: :comment_author_id,
   class_name: "Comment"
 
+  has_many :photos,
+  foreign_key: :poster_id,
+  class_name: "Photo"
+
   attr_reader :password
   after_initialize :ensure_session_token
 

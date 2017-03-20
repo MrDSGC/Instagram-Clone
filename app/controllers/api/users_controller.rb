@@ -10,6 +10,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+    render `api/users/index`
+  end
+
   def find_by_username
     @user = User.find_by(username: params[:username])
 

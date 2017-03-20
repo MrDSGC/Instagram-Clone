@@ -33,12 +33,13 @@ ActiveRecord::Schema.define(version: 20170319034212) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string   "img_url",    null: false
+    t.string   "img_url",            null: false
     t.string   "caption"
     t.string   "location"
-    t.integer  "poster_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "poster_id",          null: false
+    t.boolean  "current_user_liked"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["poster_id"], name: "index_photos_on_poster_id", using: :btree
   end
 

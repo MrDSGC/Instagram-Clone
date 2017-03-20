@@ -10,8 +10,57 @@
 
 .profile-details {
   height: 230px;
-  border: 1px dashed black;
   width:1000px;
+}
+
+.profile-details-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-detail-picture {
+  height: 150px;
+  margin-right: 90px;
+  margin-left: 40px;
+  padding: 40px;
+}
+
+.user-profile-picture {
+  border-radius: 50%;
+}
+
+.profile-detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-count, .follower-count, .following-count {
+  margin-right: 30px;
+  font-size: 17px;
+  font-weight: 300px;
+}
+
+.profile-info-biography {
+  font-size: 17px;
+  font-weight: 300px;
+}
+
+.profile-info-1st, .profile-info-2nd {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.user-profile-username {
+  font-size: 34px;
+  font-weight: 300px;
+  margin-right: 20px;
+}
+
+.user-profile-picture {
+  border-radius: 50%;
+  height: 100%
 }
 
 .profile-photos {

@@ -5,7 +5,9 @@ import CommentIndex from './comment_index';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    comments: state.comments.comments,
+    currentUser: state.session.currentUser,
+    comments: state.comments,
+    currentPhoto: state.currentPhoto,
     photo_id: ownProps.photoId
   })
 };

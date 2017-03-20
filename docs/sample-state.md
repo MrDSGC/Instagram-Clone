@@ -5,8 +5,7 @@
   },
   forms: {
     signUp: {errors: []},
-    logIn: {errors: []},
-    createComment: {errors: ["body can't be blank"]}
+    logIn: {errors: []}
   },
   photo: {
     1: {
@@ -32,7 +31,7 @@
       comment_count: 100
       }]
   },
-  userDetails {
+  user {
     username: "sammpleusername",
     user_profile_pic: "sample_url",
     user_post_count: 100,

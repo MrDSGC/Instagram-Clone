@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import { fetchPhotos } from '../../actions/photo_actions';
+import { fetchPhotos } from '../../actions/photos_actions';
 import PhotoIndex from './photo_index';
 
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     username: ownProps.username,
-    photos: state.photos.photos
+    photos: state.photos,
+    currentPhoto: state.currentPhoto
   })
 };
 
