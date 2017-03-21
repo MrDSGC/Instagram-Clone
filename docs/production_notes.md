@@ -68,3 +68,12 @@
 
 
 **3/20**
+
+- fully functional comments and like features!
+
+- noteable bugs/challenges
+  + likes state was not updating properly and persisting between photos -solved by returning action.type instead of merging. changed state to fix updating bugs
+  + feed only shows 1 photo on repeat - passing props directly to Photo component
+  + cannot index a 2nd time to find feed photos
+
+**3/21**

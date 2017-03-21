@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy, :index]
     end
 
+    match 'photos/:username' => 'photos#feed_photos', :via => :get
+
   end
 
 end

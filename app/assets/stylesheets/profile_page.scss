@@ -36,6 +36,9 @@
 }
 
 .post-count, .follower-count, .following-count {
+  display:flex;
+  flex-direction: row;
+  align-items: baseline;
   margin-right: 30px;
   font-size: 17px;
   font-weight: 300px;
@@ -54,7 +57,7 @@
 
 .user-profile-username {
   font-size: 34px;
-  font-weight: 300px;
+  font-weight: 100;
   margin-right: 20px;
 }
 
@@ -76,6 +79,20 @@
   -moz-background-size: cover;
 
 }
+
+.profile-info-biography {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.num {
+  font-weight: 900;
+  font-size: 19px;
+  margin-right: 10px;
+
+}
+
 .profile-photo-index {
   list-style-type: none;
   display: flex;

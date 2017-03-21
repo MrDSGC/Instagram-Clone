@@ -2,18 +2,15 @@
 
 *STYLING*
 
-comments flex grow scrolling overflow
-
 
 *FUNCTIONAL*
 
-feed onlh has 1 photo
-
-
+Cant have two different Indexes in one controller
 
 **ANSWERED**
 
-each photo container will have its own current photo in feed
+
+pass props directly into <Photo /> component
 
 **TO DO**
 

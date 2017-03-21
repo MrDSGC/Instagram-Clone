@@ -8,7 +8,7 @@
 User.delete_all
 
 User.create!(
-  username: "guest",
+  username: "Guest",
   password: "asdfasdf",
   biography: "Aspiring photographer",
   profile_pic_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/default_profile_picture_wxgufw.png")
@@ -742,3 +742,107 @@ Photo.create!(
     caption: "Regret",
     location: "",
     poster_id: 16)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 2)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 3)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 4)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 5)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 6)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 7)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 8)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 9)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 10)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 11)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 12)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 13)
+
+  Follow.create!(
+    follower_id: 1,
+    followed_id: 14)
+
+  Follow.create!(
+    follower_id: 2,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 3,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 4,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 5,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 6,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 7,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 8,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 9,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 10,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 11,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 12,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 13,
+    followed_id: 1)
+
+  Follow.create!(
+    follower_id: 14,
+    followed_id: 1)

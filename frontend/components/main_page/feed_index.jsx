@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoContainer from '../photo/photo_container';
+import Photo from '../photo/photo';
 
 
 class FeedIndex extends React.Component {
@@ -8,9 +8,13 @@ class FeedIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchPhotos(this.props.username);
+    this.props.fetchFeed(this.props.username);
   }
 
+  // <Photo
+  //   currentPhoto={photo}
+  //   photoId={photo.id}
+  //   feed={true}/>
   render () {
     return (
       <div className="main-feed">

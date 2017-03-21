@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPhotos } from '../../actions/photos_actions';
+import { fetchFeed } from '../../actions/photos_actions';
 import FeedIndex from './feed_index';
 
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPhotos: userId => dispatch(fetchPhotos(userId))
+    fetchFeed: userId => dispatch(fetchFeed(userId))
   };
 };
 

@@ -8,6 +8,14 @@ class Api::PhotosController < ApplicationController
     end
   end
 
+  # def feed_photos
+  #   @photos = Photos.all
+  #
+  #   if @photos
+  #     render 'api/photos/feed'
+  #   end
+  # end
+
   def show
     @photo = Photo.find_by(id: params[:id])
 

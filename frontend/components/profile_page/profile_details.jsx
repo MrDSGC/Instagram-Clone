@@ -43,21 +43,32 @@ class ProfileDetails extends React.Component {
             <div className="user-profile-username">
               {this.props.user.username}
             </div>
-
           </div>
           <div className="profile-info-2nd">
             <div className="post-count">
-              {this.props.photos.length} posts
+              <div className="num">
+                {this.props.photos.length}
+              </div>
+              posts
             </div>
             <div className="follower-count">
-              10 Followers
+              <div className="num">
+                {this.props.user.followers.length}
+              </div>
+            Followers
             </div>
             <div className="following-count">
-              10 Following
+              <div className="num">
+                {this.props.user.following.length}
+              </div>
+              Following
             </div>
           </div>
           <div className="profile-info-biography">
-            Bio: {this.props.user.biography}
+            <div className="num">
+              Bio:
+            </div>
+            {this.props.user.biography}
           </div>
         </div>
       </div>

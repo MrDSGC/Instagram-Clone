@@ -9,7 +9,7 @@ import Photo from './photo';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    currentPhoto: state.currentPhoto,
+    currentPhoto: ownProps.currentPhoto,
     photoId: ownProps.photoId,
     feed: ownProps.feed
   }

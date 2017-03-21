@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
 	}
 
 	handleGuestLogin(e) {
-		const guest = {username: "guest", password: "asdfasdf"};
+		const guest = {username: "Guest", password: "asdfasdf"};
 		this.props.login(guest)
 
 	}
