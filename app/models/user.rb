@@ -16,6 +16,22 @@ class User < ApplicationRecord
   foreign_key: :poster_id,
   class_name: "Photo"
 
+  has_many :followed_users, #different users followed by this user
+  foreign_key: :follower_id,
+  class_name: "Follow"
+
+  has_many :users_following, #different users following this user
+  foreign_key: :followed_id,
+  class_name: "Follow"
+
+  has_many :followers, #users that follow this user
+  through: :users_following,
+  source: :user_following
+
+  has_many :following, #users that this user follow
+  through: :followed_users,
+  source: :user_followed
+
   attr_reader :password
   after_initialize :ensure_session_token
 

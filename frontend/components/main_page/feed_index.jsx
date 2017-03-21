@@ -15,8 +15,11 @@ class FeedIndex extends React.Component {
     return (
       <div className="main-feed">
         <ul className="feed-index">
-          {this.props.photos.map((photo) => {
-            <PhotoContainer photoId={photo.id} />
+          {this.props.photos.map((photo, idx) => {
+            return(
+              <li key={idx}>
+              </li>
+            )
           })}
         </ul>
       </div>

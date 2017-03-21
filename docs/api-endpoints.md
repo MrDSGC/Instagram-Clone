@@ -24,3 +24,13 @@
 - `GET /api/photo/:id`
 - `POST /api/users/photos`
 - `PATCH /api/users/photos`
+
+### Follows
+
+- `POST /api/follows`
+- `DELETE /api/follows`
+
+### Likes
+
+- `POST /api/likes`
+- `DELETE /api/likes`

@@ -5,7 +5,7 @@ import FeedIndex from './feed_index';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    username: ownProps.username,
+    username: state.session.currentUser.username,
     photos: state.photos
   })
 };

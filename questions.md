@@ -7,14 +7,9 @@ comments flex grow scrolling overflow
 
 *FUNCTIONAL*
 
+feed onlh has 1 photo
 
-when you enter a new page need to enter twice?
 
-like button not using correct "this"
-
-how to pass down #handle like to the comment_form_container
-
-navigating between users via profile button
 
 **ANSWERED**
 
@@ -22,7 +17,7 @@ each photo container will have its own current photo in feed
 
 **TO DO**
 
-like errors
+
 
 **DONE TODAY**
 
