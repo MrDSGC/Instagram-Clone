@@ -1,6 +1,5 @@
 import {
-  RECEIVE_PHOTOS,
-  RECEIVE_PHOTO,} from '../actions/photo_actions';
+  RECEIVE_PHOTO} from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
 const initialState =  {
@@ -8,9 +7,9 @@ const initialState =  {
   img_url: "",
   caption: "",
   poster: {},
-  like_count_minus_one: "",
   current_user_liked: false,
-  location: ""
+  location: "",
+  comments: []
 };
 
 const PhotoReducer = (state = initialState, action) => {

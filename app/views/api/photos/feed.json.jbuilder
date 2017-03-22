@@ -5,7 +5,6 @@ json.array! @photos do |photo|
   json.location photo.location
   json.age photo.age
   json.id photo.id
-  json.like_count_minus_one photo.like_count_minus_one
 
   if photo.likers.include?(current_user)
     json.current_user_liked true

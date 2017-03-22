@@ -32,6 +32,14 @@ class User < ApplicationRecord
   through: :followed_users,
   source: :user_followed
 
+
+  has_many :feed_photos,
+  through: :following,
+  source: :photos
+
+  has_many :feed_comments,
+  through: :feed_photos,
+  source: :comments
   attr_reader :password
   after_initialize :ensure_session_token
 

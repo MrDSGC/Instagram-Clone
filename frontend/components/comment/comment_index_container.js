@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.currentUser,
     comments: state.comments,
     currentPhoto: state.currentPhoto,
-    photo_id: ownProps.photoId
+    photo_id: ownProps.photoId,
+    feed: ownProps.feed
   })
 };
 

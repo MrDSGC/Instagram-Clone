@@ -6,7 +6,10 @@ export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const signup = user => dispatch => (
   APIUtil.signup(user)
-    .then(user => dispatch(receiveCurrentUser(user)))
+    .then(user => {
+      dispatch(receiveCurrentUser(user))
+      hashHistory.push(`/feed`)
+    })
     .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 

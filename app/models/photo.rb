@@ -19,15 +19,6 @@ class Photo < ApplicationRecord
     self.likes.count
   end
 
-  def like_count_minus_one
-    if self.likes.count - 1 < 0
-      0
-    else
-      self.likes.count - 1
-    end
-  end
-
-
   def comment_count
     self.comments.count
   end
@@ -36,7 +27,7 @@ class Photo < ApplicationRecord
     age_days = (DateTime.now - self.created_at.to_datetime)
     age_weeks = (age_days / 7).round
     age_hours = (age_days * 24).round
-    age_minutes = (age_hours * 60).round
+    age_minutes = (age_days * 24 * 60).round
 
     if age_minutes < 60
       return "#{age_minutes} min"

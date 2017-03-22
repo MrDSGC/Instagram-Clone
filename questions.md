@@ -2,19 +2,28 @@
 
 *STYLING*
 
+comments index still being super stubborn
 
 *FUNCTIONAL*
 
-Cant have two different Indexes in one controller
+updating info in feed?
+
+comment form updating wrong from feed
+
+comments wont show in feed
+
+likes updating wrong from feed
+
+details wont update if set to !== length but updates constantly if comparing arrays
+
+broke my sign up/sign in?
 
 **ANSWERED**
 
 
-pass props directly into <Photo /> component
-
 **TO DO**
 
-
+comment form
 
 **DONE TODAY**
 
@@ -22,13 +31,12 @@ pass props directly into <Photo /> component
 **BUG LIST**
 
 *MAJOR*
--  likes not updating properly in photo.jsx state
-  +  0 likes until go to another photo with more than 0 likes and state is persisted between photos
-  + 1 less like upon opening
+
+  - likes not updating in photo_index.jsx state
 
 *MINOR*
 
-- likes not updating in photo_index.jsx state
+- text not wrapping in comments
 
 - holding down keys does not re-register keystroke?
   + use this.select()

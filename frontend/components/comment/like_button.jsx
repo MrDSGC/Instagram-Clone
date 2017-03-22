@@ -15,12 +15,22 @@ class LikeButton extends React.Component {
         this.props.removeLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.currentPhoto.id
-        }).then(() => this.props.fetchPhoto(this.props.currentPhoto.id))
+        }).then(
+					() => {
+						if(!this.props.feed) {
+							this.props.fetchPhoto(this.props.photoId)
+						}}
+					)
     } else {
       this.props.addLike({
         liker_id: this.props.currentUser.id,
         photo_id: this.props.currentPhoto.id
-      }).then(() => this.props.fetchPhoto(this.props.currentPhoto.id))
+      }).then(
+				() => {
+					if(!this.props.feed) {
+						this.props.fetchPhoto(this.props.photoId)
+					}}
+				)
     }
   }
 

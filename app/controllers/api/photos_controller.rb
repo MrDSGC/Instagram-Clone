@@ -1,20 +1,19 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    poster = User.find_by(username: params[:username])
-    @photos = Photo.where(poster_id: poster.id).order(created_at: :desc)
+
+    if params[:username]
+      poster = User.find_by(username: params[:username])
+      @photos = Photo.where(poster_id: poster.id).order(created_at: :desc).includes(:likes)
+    else
+      @photos = current_user.feed_photos.order(created_at: :desc)
+    end
+
     if @photos
       render 'api/photos/index'
     end
   end
 
-  # def feed_photos
-  #   @photos = Photos.all
-  #
-  #   if @photos
-  #     render 'api/photos/feed'
-  #   end
-  # end
 
   def show
     @photo = Photo.find_by(id: params[:id])

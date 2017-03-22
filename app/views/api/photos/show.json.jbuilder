@@ -1,1 +1,1 @@
-json.extract! @photo, :img_url, :caption, :poster, :location, :age, :id, :like_count_minus_one, :current_user_liked
+json.extract! @photo, :img_url, :caption, :poster, :location, :age, :id, :like_count,  :current_user_liked, :comments

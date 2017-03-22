@@ -11,3 +11,11 @@ export const getUsers = () => {
     url: `api/users/`
   })
 }
+
+export const patchUser = (user) => {
+  return $.ajax({
+    method:"PATCH",
+    url:`api/users/${user.id}`,
+    data: {user}
+  })
+}

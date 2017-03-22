@@ -36,6 +36,7 @@
 .photo-stuff {
   padding: 20px;
   width: 300px;
+  height: auto;
   margin-bottom:0;
   padding-bottom: 0;
 }
@@ -77,6 +78,11 @@
   width: 230px;
   word-wrap: break-word;
 }
+
+.photo-location-output, .photo-caption-output {
+  cursor: pointer;
+}
+
 .poster-info {
   display:flex;
   flex-direction: row;
@@ -115,9 +121,6 @@
   content: "";
   display: table;
   clear: both;
-}
-
-.caption {
 }
 
 

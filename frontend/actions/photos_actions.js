@@ -14,6 +14,6 @@ export const fetchPhotos = username => dispatch => (
 );
 
 export const fetchFeed = () => dispatch => (
-  APIUtil.getFeed()
+  APIUtil.getPhotos()
     .then(photos => dispatch(receivePhotos(photos)))
 )

@@ -1,21 +1,23 @@
 export const getComments = (photo_id) => {
   return $.ajax({
     method: "GET",
-    url: `api/photos/${photo_id}/comments`
+    url: `api/comments`,
+    data: {photo_id}
   });
 };
 
 export const postComment = (photo_id, comment) => {
   return $.ajax({
     method:"POST",
-    url: `api/photos/${photo_id}/comments`,
-    data: { comment }
+    url: `api/comments`,
+    data: { comment: comment, photo_id }
   });
 };
 
 export const deleteComment = (photo_id, comment_id) => {
   return $.ajax({
     method:"DELETE",
-    url:`api/photos/${photo_id}/comments/${comment_id}`
+    url:`api/comments/${comment_id}`,
+    data: {photo_id: photo_id}
   });
 };

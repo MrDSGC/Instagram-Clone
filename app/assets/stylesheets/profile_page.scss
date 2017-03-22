@@ -44,6 +44,19 @@
   font-weight: 300px;
 }
 
+.profile-details-button {
+  cursor:pointer;
+  color: #black;
+  background-color: #fafafa;
+  padding: 0, 8px;
+  flex-shrink: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 8px 18px;
+}
+
 .profile-info-biography {
   font-size: 17px;
   font-weight: 300px;
@@ -55,6 +68,9 @@
   margin-bottom: 30px;
 }
 
+.profile-info-1st {
+  align-items: center;
+}
 .user-profile-username {
   font-size: 34px;
   font-weight: 100;

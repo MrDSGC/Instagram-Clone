@@ -5,10 +5,3 @@ export const getPhotos = (username) => {
     data: { username }
   });
 };
-// 
-// export const getFeed = (username) => {
-//   return $.ajax({
-//     method:"GET",
-//     url:`api/photos/${username}`
-//   })
-// }

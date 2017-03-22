@@ -33,7 +33,7 @@ class Photo extends React.Component {
 
   locationOutput () {
     return (<div
-      onDoubleClick={this.toggle("location")}
+      onClick={this.toggle("location")}
       className="photo-location-output" >{this.state.location} {this.editOutput()}
       </div>
     )
@@ -60,7 +60,7 @@ class Photo extends React.Component {
           className="caption-wrap"
           to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
         <div
-          onDoubleClick={this.toggle("caption")}
+          onClick={this.toggle("caption")}
           className="photo-caption-output">
           {this.state.caption}  {this.editOutput()}
         </div>
@@ -69,6 +69,7 @@ class Photo extends React.Component {
   };
 
   captionForm () {
+
     return(
       <div>
         <Link to={`/${this.props.currentPhoto.poster.username}`}>{this.props.currentPhoto.poster.username}</Link>
@@ -105,29 +106,34 @@ class Photo extends React.Component {
           this.props.removeLike({
             liker_id: this.props.currentUser.id,
             photo_id: this.props.photoId
-          }).then(() => this.props.fetchPhoto(this.props.photoId))
+          }).then(
+            () => {
+              if(!this.props.feed) {
+                this.props.fetchPhoto(this.props.photoId)
+              }}
+            )
       } else {
         this.props.addLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.photoId
-        }).then(() => this.props.fetchPhoto(this.props.photoId))
+        }).then(
+          () => {
+            if(!this.props.feed) {
+              this.props.fetchPhoto(this.props.photoId)
+            }}
+          )
       }
     }
 
-  likeCount () {
-    if(this.props.currentPhoto.current_user_liked) {
-      return ( this.props.currentPhoto.like_count_minus_one + 1)
-    } else {
-      return ( this.props.currentPhoto.like_count_minus_one)
-    }
-  }
 
   handleProfile(username) {
     return () => hashHistory.push(`/${username}`)
   }
 
   componentDidMount() {
+    if(!this.props.feed) {
     this.props.fetchPhoto(this.props.photoId)
+    }
   }
 
   editOutput() {
@@ -148,43 +154,92 @@ class Photo extends React.Component {
     }
   }
 
-  fp1() {
-    if (this.props.feed) {
-      return("inside-feed-index")
-    } else{
-      return("inside-profile-modal")
+  likesOrLike () {
+    if(this.props.currentPhoto.likes === 1){
+      return (
+        "Like"
+      )
+    } else {
+      return(
+        "Likes"
+      )
     }
   }
-  render () {
-    let {currentPhoto} = this.props
-     return(
-      <div className={this.fp1()}>
-        <img className="photo" src={currentPhoto.img_url} onDoubleClick={this.handleLike}/>
-        <div className="photo-stuff">
-          <div className="poster-info">
-            <img
-              onClick={this.handleProfile(currentPhoto.poster.username)}
-              className="profile-photo" src={currentPhoto.poster.profile_pic_url}/>
-            <div className="poster-info-username">
-              <Link className="profile-username" to={`/${currentPhoto.poster.username}`}>{currentPhoto.poster.username}</Link>
-              {this.state.locationEdit ? this.locationForm() : this.locationOutput()}
-            </div>
-          </div>
-          <div className="photo-info">
-            <div className="photo-info-left"> {this.likeCount()} likes</div>
-            <div className="photo-info-right">{currentPhoto.age}</div>
-          </div>
-          <div className="caption">
-            {this.state.captionEdit ? this.captionForm() : this.captionOutput()}
-          </div>
 
-          <div className="comments-here">
-            <CommentIndexContainer photoId={this.props.photoId} handleLike={this.props.handleLike}/>
-          </div>
-        </div>
+  compnentOutput () {
+    let {currentPhoto} = this.props
+
+    // call window.outer inner width
+    if (this.props.feed) {
+      return(
+       <div className="inside-feed-index">
+         <div className="feed-poster-info">
+           <img
+             onClick={this.handleProfile(currentPhoto.poster.username)}
+             className="profile-photo" src={currentPhoto.poster.profile_pic_url}/>
+           <div className="feed-poster-info-username">
+             <Link className="feed-profile-username" to={`/${currentPhoto.poster.username}`}>{currentPhoto.poster.username}</Link>
+             <div className="feed-location">
+               {this.locationOutput()}
+             </div>
+           </div>
+           <div className="feed-photo-age">{currentPhoto.age}</div>
+         </div>
+
+         <img className="feed-photo-img" src={currentPhoto.img_url} onDoubleClick={this.handleLike}/>
+
+         <div className="feed-photo-info">
+           <div className="feed-like-count"> {this.props.currentPhoto.likes}</div>
+           <div>{this.likesOrLike()}</div>
+         </div>
+         <div className="feed-caption">
+           {this.captionOutput()}
+         </div>
+         <div className="feed-comments-here">
+           <CommentIndexContainer photoId={this.props.photoId} handleLike={this.props.handleLike}
+             feed={this.props.feed}/>
+         </div>
+       </div>
+     )
+    } else {
+      return(
+       <div className="inside-profile-modal">
+         <img className="photo" src={currentPhoto.img_url} onDoubleClick={this.handleLike}/>
+         <div className="photo-stuff">
+           <div className="poster-info">
+             <img
+               onClick={this.handleProfile(currentPhoto.poster.username)}
+               className="profile-photo" src={currentPhoto.poster.profile_pic_url}/>
+             <div className="poster-info-username">
+               <Link className="profile-username" to={`/${currentPhoto.poster.username}`}>{currentPhoto.poster.username}</Link>
+               {this.state.locationEdit ? this.locationForm() : this.locationOutput()}
+             </div>
+           </div>
+           <div className="photo-info">
+             <div className="photo-info-left"> {this.props.currentPhoto.like_count} likes</div>
+             <div className="photo-info-right">{currentPhoto.age}</div>
+           </div>
+           <div className="caption">
+             {this.state.captionEdit ? this.captionForm() : this.captionOutput()}
+           </div>
+
+           <div className="comments-here">
+             <CommentIndexContainer photoId={this.props.photoId} handleLike={this.props.handleLike}/>
+           </div>
+         </div>
+       </div>
+     )
+    }
+  }
+
+
+  render () {
+    return (
+      <div>
+        {this.compnentOutput()}
       </div>
     )
-  };
+  }
 }
 
 export default Photo;
