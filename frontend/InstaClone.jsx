@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
+import Modal from 'react-modal';
 import configureStore from './store/store';
-import Modal from 'react-modal'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.store = store
+  window.store = store;
 
 
   const root = document.getElementById('root');
