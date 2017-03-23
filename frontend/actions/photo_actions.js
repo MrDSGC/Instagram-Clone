@@ -15,7 +15,6 @@ export const fetchPhoto = photoId => dispatch => (
 
 export const uploadPhoto = photo => dispatch => (
   APIUtil.postPhoto(photo)
-    .then( uploaded => dispatch(receivePhoto(uploaded)))
 );
 
 export const updatePhoto = photo => dispatch => (

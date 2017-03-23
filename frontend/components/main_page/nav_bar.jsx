@@ -64,7 +64,7 @@ class NavBar extends React.Component {
           className="upload-modal"
           overlayClassName="upload-modal-overlay"
           contentLabel="">
-          <UploadPhotoFormContainer onModalClose={this.onModalClose}/>
+          <UploadPhotoFormContainer currentUser={this.props.currentUser}onModalClose={this.onModalClose}/>
           <button className="modal-exit" onClick={this.onModalClose}>X</button>
         </Modal>
       </div>
