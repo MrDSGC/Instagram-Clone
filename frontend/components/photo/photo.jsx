@@ -103,13 +103,11 @@ class Photo extends React.Component {
       e.preventDefault();
 
       if(this.props.currentPhoto.current_user_liked){
-          console.log("working");
           this.props.destroyLike({
             liker_id: this.props.currentUser.id,
             photo_id: this.props.photoId
           })
       } else {
-        console.log("working");
         this.props.addLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.photoId

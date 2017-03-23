@@ -5,7 +5,7 @@ import _ from "lodash"
 
 const initialState = [];
 
-const PhotoReducer = (state = initialState, action) => {
+const PhotosReducer = (state = initialState, action) => {
   Object.freeze(state)
   let newState = merge({}, state)
   switch(action.type) {
@@ -14,28 +14,16 @@ const PhotoReducer = (state = initialState, action) => {
      action.photos.forEach((photo)=> newState[photo.id] = photo)
      return newState;
     case RECEIVE_LIKE:
-      let appendedState = {}
-      _.values(newState).forEach(photo => {
-        if(action.photo_id === photo.id) {
-          photo.current_user_liked = true
-          photo.like_count += 1
-        }
-        newState[photo.id] = photo
-      })
-      return appendedState
+      newState[action.like.photo_id].current_user_liked = true
+      newState[action.like.photo_id].like_count += 1
+      return newState
     case REMOVE_LIKE:
-      appendedState = {}
-      _.values(newState).forEach(photo => {
-        if(action.photo_id === photo.id) {
-          photo.current_user_liked = false
-          photo.like_count -= 1
-        }
-        newState[photo.id] = photo
-      })
-      return appendedState
+      newState[action.like.photo_id].current_user_liked = false
+      newState[action.like.photo_id].like_count -= 1
+      return newState
     default:
       return state;
   }
 };
 
-export default PhotoReducer;
+export default PhotosReducer;
