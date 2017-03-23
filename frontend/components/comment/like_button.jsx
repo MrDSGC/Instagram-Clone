@@ -10,8 +10,8 @@ class LikeButton extends React.Component {
 
 	handleLike(e) {
     e.preventDefault();
-    if(this.state.liked){
-        this.props.removeLike({
+    if(this.props.currentPhoto.current_user_liked){
+        this.props.destroyLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.currentPhoto.id
         })
