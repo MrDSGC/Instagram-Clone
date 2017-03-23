@@ -2,9 +2,8 @@ import { connect } from 'react-redux';
 import {
   fetchPhoto,
   updatePhoto} from '../../actions/photo_actions';
-import {addLike, removeLike} from '../../actions/like_actions';
+import {addLike, destroyLike} from '../../actions/like_actions';
 import Photo from './photo';
-import _ from "lodash"
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -19,8 +18,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),
     updatePhoto: photo => dispatch(updatePhoto(photo)),
-    addLike: like => addLike(like),
-    removeLike: like => removeLike(like),
+    addLike: like => dispatch(addLike(like)),
+    destroyLike: like => dispatch(destroyLike(like)),
   };
 };
 

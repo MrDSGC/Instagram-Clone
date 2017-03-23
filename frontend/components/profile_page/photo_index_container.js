@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import { fetchPhotos } from '../../actions/photos_actions';
 import { receiveComments} from '../../actions/comment_actions'
 import PhotoIndex from './photo_index';
-
+import _ from "lodash"
 
 const mapStateToProps = (state, ownProps) => {
   return ({
     username: ownProps.username,
-    photos: state.photos,
+    photos:  _.values(state.photos),
     currentPhoto: state.currentPhoto
   })
 };

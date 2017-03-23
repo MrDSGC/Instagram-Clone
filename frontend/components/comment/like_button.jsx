@@ -4,16 +4,9 @@ class LikeButton extends React.Component {
 
 	constructor(props) {
 		super(props);
-    this.handleLike = this.handleLike.bind(this)
-		this.toggle = this.toggle.bind(this)
-		this.state = {
-			liked: this.props.currentPhoto.current_user_liked
-		}
+    this.handleLike = this.handleLike.bind(this);
 	}
 
-	toggle() {
-		return () => this.setState({["liked"]: !this.state["liked"]})
-	}
 
 	handleLike(e) {
     e.preventDefault();
@@ -21,17 +14,17 @@ class LikeButton extends React.Component {
         this.props.removeLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.currentPhoto.id
-        }).then(this.toggle())
+        })
     } else {
       this.props.addLike({
         liker_id: this.props.currentUser.id,
         photo_id: this.props.currentPhoto.id
-      }).then(this.toggle())
+      })
     }
   }
 
 	heartOutput () {
-		if(this.state.liked) {
+		if(this.props.currentPhoto.current_user_liked) {
 			return (
 				"like-heart-red"
 			)

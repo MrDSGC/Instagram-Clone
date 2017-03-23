@@ -1,5 +1,5 @@
-import {
-  RECEIVE_PHOTO} from '../actions/photo_actions';
+import {RECEIVE_PHOTO} from '../actions/photo_actions';
+import {RECEIVE_LIKE, REMOVE_LIKE} from "../actions/like_actions"
 import merge from 'lodash/merge';
 
 const initialState =  {
@@ -9,7 +9,8 @@ const initialState =  {
   poster: {},
   current_user_liked: false,
   location: "",
-  comments: []
+  comments: [],
+  like_count: ''
 };
 
 const PhotoReducer = (state = initialState, action) => {
@@ -18,6 +19,10 @@ const PhotoReducer = (state = initialState, action) => {
   switch(action.type) {
     case RECEIVE_PHOTO:
       return action.photo
+    case RECEIVE_LIKE:
+      return merge({}, newState, {current_user_liked: true, like_count: state.like_count + 1 });
+    case REMOVE_LIKE:
+      return merge({}, newState, {current_user_liked: false, like_count: state.like_count - 1 });
     default:
       return state;
   }

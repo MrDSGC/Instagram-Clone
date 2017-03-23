@@ -8,9 +8,7 @@
 
 .photo-comment-index {
   flex-direction: column;
-  height:341px;
-  -webkit-flex: 1 1 auto;
-  overflow-y: auto;
+  flex: 1;
   min-height: 0px;
   font-size: 15px;
   padding-bottom: 10px;
@@ -31,7 +29,11 @@
 }
 
 .comments-here {
-  height: 69%
+  height: calc(100% - 81px - 93px);
+}
+
+.comments-here-2 {
+  height: 100%;
 }
 
 .comment-input {

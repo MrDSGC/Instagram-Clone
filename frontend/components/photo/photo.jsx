@@ -103,28 +103,19 @@ class Photo extends React.Component {
       e.preventDefault();
 
       if(this.props.currentPhoto.current_user_liked){
-          this.props.removeLike({
+          console.log("working");
+          this.props.destroyLike({
             liker_id: this.props.currentUser.id,
             photo_id: this.props.photoId
-          }).then(
-            () => {
-              if(!this.props.feed) {
-                this.props.fetchPhoto(this.props.photoId)
-              }}
-            )
+          })
       } else {
+        console.log("working");
         this.props.addLike({
           liker_id: this.props.currentUser.id,
           photo_id: this.props.photoId
-        }).then(
-          () => {
-            if(!this.props.feed) {
-              this.props.fetchPhoto(this.props.photoId)
-            }}
-          )
+        })
       }
     }
-
 
   handleProfile(username) {
     return () => hashHistory.push(`/${username}`)
@@ -149,6 +140,12 @@ class Photo extends React.Component {
         caption: nextProps.currentPhoto.caption
       })
     }
+
+    if(this.props.currentPhoto.like_count !== nextProps.currentPhoto.like_count) {
+      if(!this.props.feed) {
+      nextProps.fetchPhoto(this.props.photoId)
+      }
+    }
   }
 
   likesOrLike () {
@@ -163,9 +160,9 @@ class Photo extends React.Component {
     }
   }
 
+
   compnentOutput () {
     let {currentPhoto} = this.props
-    console.log(this.props.currentPhoto.like_count);
     if (this.props.feed || window.innerWidth < 800) {
       return(
        <div className="inside-feed-index">
@@ -183,7 +180,6 @@ class Photo extends React.Component {
          </div>
 
          <img className="feed-photo-img" src={currentPhoto.img_url} onDoubleClick={this.handleLike}/>
-
          <div className="feed-photo-info">
            <div className="feed-like-count"> {this.props.currentPhoto.like_count}</div>
            <div>{this.likesOrLike()}</div>

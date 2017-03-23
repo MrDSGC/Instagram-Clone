@@ -228,6 +228,21 @@
   height: 130px;
 }
 
+.heart-animation-off {
+  position: relative;
+  font-size: 86px;
+  color: white;
+  left: 254px;
+  bottom: 430px;
+  opacity: 0;
+}
+
+.not-following {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .feed-comment-index {
   height: 58%;
   padding: 0 25px;

@@ -11,9 +11,28 @@ class FeedIndex extends React.Component {
     this.props.fetchComments();
   }
 
+  notFollowing () {
+    if(this.props.currentUser !== null) {
+      if ( this.props.currentUser.following.length === 0) {
+        return (
+          "You are not following anyone! Here are a few random posts..."
+        )
+      }
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.photos.length !== nextProps.photos.length) {
+			this.props.fetchFeed(nextProps.currentUser.username);
+		}
+  }
+
   render () {
     return (
       <div className="main-feed">
+        <div className="not-following">
+          {this.notFollowing()}
+        </div>
         <ul className="feed-index">
           {this.props.photos.map((photo, idx) => {
             return(
@@ -24,8 +43,7 @@ class FeedIndex extends React.Component {
                   photoId={photo.id}
                   feed={true}
                   addLike={this.props.addLike}
-                  removeLike={this.props.removeLike}
-                  updatePhoto={this.props.updatePhoto}
+                  destroyLike={this.props.destroyLike}
                   />
               </li>
             )

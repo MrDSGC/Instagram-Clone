@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchComments, destroyComment } from '../../actions/comment_actions';
 import CommentIndex from './comment_index';
-
+import _ from "lodash"
 
 const mapStateToProps = (state, ownProps) => {
   return ({

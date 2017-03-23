@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileDetailsContainer from './profile_details_container';
 import PhotoIndexContainer from './photo_index_container';
 
+
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props)

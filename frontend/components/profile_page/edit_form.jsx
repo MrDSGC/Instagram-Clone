@@ -10,7 +10,6 @@ class EditFormed extends React.Component {
 		super(props);
 		this.state = {
       id: '',
-      username: '',
       biography: '',
 			profile_pic_url: '',
 			uploadedFileCloudinaryUrl: ''
@@ -104,15 +103,6 @@ class EditFormed extends React.Component {
 						</div>
 					</h1>
 					<div className="edit-inputs">
-						<div className="edit-inputs-row">
-							<div>
-								Username :
-							</div>
-							<input type="text"
-								className="edit-username-inputs"
-								value={this.state.username}
-								onChange={this.update("username")}/>
-						</div>
 						<div className="edit-inputs-row">
 							<div>
 								Biography :

@@ -61,6 +61,9 @@ class ProfileDetails extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.username !== nextProps.username) {
       this.props.fetchUser(nextProps.username)
+      .then( action => {
+       this.props.isFollowing(action.user.id)
+     })
     }
     if (this.props.user.follower_count !== nextProps.user.follower_count) {
       this.props.fetchUser(nextProps.username)

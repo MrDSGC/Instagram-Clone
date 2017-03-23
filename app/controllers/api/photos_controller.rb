@@ -7,6 +7,9 @@ class Api::PhotosController < ApplicationController
       @photos = Photo.where(poster_id: poster.id).order(created_at: :desc).includes(:likes)
     else
       @photos = current_user.feed_photos.order(created_at: :desc)
+      if @photos.empty?
+        @photos = Photo.all.sample(10)
+      end
     end
 
     if @photos
