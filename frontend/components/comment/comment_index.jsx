@@ -24,10 +24,12 @@ class CommentIndex extends React.Component {
   };
 
   deleteOutput (author_id, comment_id) {
-    if (this.props.currentUser.id === author_id) {
-      return (
-        <button className="remove-comment-button" onClick={ this.removeComment(comment_id) }>X</button>
-      )
+    if ( this.props.currentUser) {
+      if (this.props.currentUser.id === author_id) {
+        return (
+          <button className="remove-comment-button" onClick={ this.removeComment(comment_id) }>X</button>
+        )
+      }
     }
   }
 
