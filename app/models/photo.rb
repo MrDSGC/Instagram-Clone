@@ -23,6 +23,10 @@ class Photo < ApplicationRecord
     self.comments.count
   end
 
+  def raw_age
+    (DateTime.now - self.created_at.to_datetime)
+  end
+
   def age
     age_days = (DateTime.now - self.created_at.to_datetime)
     age_weeks = (age_days / 7).round

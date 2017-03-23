@@ -1,4 +1,5 @@
-json.array! @photos do |photo|
+sorted_photos = @photos.sort_by{ |photo| photo.raw_age }
+json.array! sorted_photos do |photo|
   json.img_url photo.img_url
   json.caption photo.caption
   json.poster photo.poster

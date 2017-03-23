@@ -4,9 +4,9 @@ class Api::PhotosController < ApplicationController
 
     if params[:username]
       poster = User.find_by(username: params[:username])
-      @photos = Photo.where(poster_id: poster.id).order(created_at: :desc).includes(:likes)
+      @photos = Photo.where(poster_id: poster.id).includes(:likes)
     else
-      @photos = current_user.feed_photos.order(created_at: :desc)
+      @photos = current_user.feed_photos
       if @photos.empty?
         @photos = Photo.all.sample(10)
       end
