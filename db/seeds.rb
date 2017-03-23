@@ -750,12 +750,6 @@ Photo.create!(
     poster_id: 16)
 
   Photo.create!(
-    img_url: "",
-    caption: "",
-    location: "",
-    poster_id: 17)
-
-  Photo.create!(
     img_url: "https://res.cloudinary.com/mrdsgc/image/upload/v1490286124/seedfiles/2017-01-28_17.26.44_1438085768223451043_208634859.jpg",
     caption: "Cool bug",
     location: "NYC",
