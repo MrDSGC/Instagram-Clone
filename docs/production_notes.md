@@ -87,4 +87,13 @@
   + feed photos rendering wrong - solved by conditionally rendering based on feed prop passed into the component
   + comments and likes state not updating in feed
 
-**
+**3/22**
+
+- got everything working besides a few minor bugs!
+- everything fully seeded
+
+- notable bugs/challenges
+  + feed comments are used instead of photo comments, need to refresh once to work - oldstate was being merged with new state, solved by resetting state every RECEIVECOMMENTS
+  + logout while on feed page doesnt redirect to login page
+  when navigating from feed, comments_index_ line 31 not rendering - SOLVED set photos state to [] upon logout
+  + comments wont update in feed - it can but takes SO LONG -SOLVED get rid of componentWillReceiveProps in comment index

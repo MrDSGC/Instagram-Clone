@@ -93,7 +93,7 @@
 
 .photo-info {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .caption-wrap {
@@ -131,6 +131,10 @@
   flex-direction: column;
   justify-content: flex-start;
 
+}
+
+.caption {
+  margin-bottom: 10px;
 }
 
 .caption-wrap, .profile-username {

@@ -152,7 +152,7 @@ class Photo extends React.Component {
   }
 
   likesOrLike () {
-    if(this.props.currentPhoto.likes === 1){
+    if(this.props.currentPhoto.like_count === 1){
       return (
         "Like"
       )
@@ -165,9 +165,8 @@ class Photo extends React.Component {
 
   compnentOutput () {
     let {currentPhoto} = this.props
-
-    // call window.outer inner width
-    if (this.props.feed) {
+    console.log(this.props.currentPhoto.like_count);
+    if (this.props.feed || window.innerWidth < 800) {
       return(
        <div className="inside-feed-index">
          <div className="feed-poster-info">
