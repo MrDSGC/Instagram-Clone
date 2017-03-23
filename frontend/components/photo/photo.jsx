@@ -186,7 +186,7 @@ class Photo extends React.Component {
          <img className="feed-photo-img" src={currentPhoto.img_url} onDoubleClick={this.handleLike}/>
 
          <div className="feed-photo-info">
-           <div className="feed-like-count"> {this.props.currentPhoto.likes}</div>
+           <div className="feed-like-count"> {this.props.currentPhoto.like_count}</div>
            <div>{this.likesOrLike()}</div>
          </div>
          <div className="feed-caption">

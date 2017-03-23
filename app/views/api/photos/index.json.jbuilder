@@ -5,7 +5,7 @@ json.array! @photos do |photo|
   json.location photo.location
   json.age photo.age
   json.id photo.id
-  json.likes photo.like_count
+  json.like_count photo.like_count
   json.comments photo.comment_count
   json.comments_index photo.comments
 

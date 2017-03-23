@@ -8,13 +8,16 @@ Cant get comments index to look good in photo modal
 *FUNCTIONAL*
 
 
-likes not updating in the feed
+- likes count not updating in the feed
 
-edit profile taking old state
+- likes not updating in photo_index.jsx state
 
- feed comments are used instead of photo comments, need to refresh once to work
+- edit profile taking old state
+
+photo show not changing heart color
 
 **ANSWERED**
+feed comments are used instead of photo comments, need to refresh once to work - oldstate was being merged with new state, solved by resetting state every RECEIVECOMMENTS
 
 logout while on feed page doesnt redirect to login page
 when navigating from feed, comments_index_ line 31 not rendering - SOLVED set photos state to [] upon logout
@@ -30,7 +33,6 @@ comments wont update in feed - it can but takes SO LONG -SOLVED get rid of compo
 
 *MAJOR*
 
-  - likes not updating in photo_index.jsx state
 
 *MINOR*
 

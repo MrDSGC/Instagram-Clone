@@ -38,6 +38,7 @@ class PhotoIndex extends React.Component {
 		if (this.props.username != nextProps.username) {
 			this.props.fetchPhotos(nextProps.username);
 		}
+
 	}
 
   render() {
@@ -55,7 +56,7 @@ class PhotoIndex extends React.Component {
 										<div className="likes">
 											<i className="fa fa-heart" aria-hidden="true"></i>
 											<div className="photo-index-count">
-												{photo.likes}
+												{photo.like_count}
 											</div>
 										</div>
 										<div className="comments">
