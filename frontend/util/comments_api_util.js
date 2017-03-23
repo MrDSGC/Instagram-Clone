@@ -6,11 +6,11 @@ export const getComments = (photo_id) => {
   });
 };
 
-export const postComment = (photo_id, comment) => {
+export const postComment = (comment) => {
   return $.ajax({
     method:"POST",
     url: `api/comments`,
-    data: { comment: comment, photo_id }
+    data: { comment }
   });
 };
 

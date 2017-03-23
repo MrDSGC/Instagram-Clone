@@ -4,13 +4,14 @@ import {
   updatePhoto} from '../../actions/photo_actions';
 import {addLike, removeLike} from '../../actions/like_actions';
 import Photo from './photo';
+import _ from "lodash"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    currentPhoto: state.currentPhoto,
+    currentPhoto: ownProps.currentPhoto || state.currentPhoto,
     photoId: ownProps.photoId,
-    feed: ownProps.feed
+    feed: ownProps.feed,
   }
 };
 
@@ -19,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),
     updatePhoto: photo => dispatch(updatePhoto(photo)),
     addLike: like => addLike(like),
-    removeLike: like => removeLike(like)
+    removeLike: like => removeLike(like),
   };
 };
 

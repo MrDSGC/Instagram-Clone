@@ -40,9 +40,13 @@ class User < ApplicationRecord
   has_many :feed_comments,
   through: :feed_photos,
   source: :comments
+
   attr_reader :password
   after_initialize :ensure_session_token
 
+  def follower_count
+    self.followers.count
+  end
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64

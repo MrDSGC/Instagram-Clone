@@ -1,11 +1,10 @@
 class Api::CommentsController < ApplicationController
 
   def index
-
-    if params[:photo_id] == "undefined"
-      @comments = current_user.feed_comments
-    else
+    if params[:photo_id]
       @comments = Comment.where(photo_id: params[:photo_id])
+    else
+      @comments = current_user.feed_comments
     end
     render 'api/comments/index'
   end
@@ -13,12 +12,7 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      if params[:photo_id] == "undefined"
-        @comments = current_user.feed_comments
-      else
-        @comments = Comment.where(photo_id: params[:photo_id])
-      end
-      render 'api/comments/index'
+      render 'api/comments/show'
     else
       render json: ["Comment can't be blank"] , status: 404
     end
@@ -27,12 +21,7 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find_by(id: params[:id])
     @comment.destroy
-    if params[:photo_id] == "undefined"
-      @comments = current_user.feed_comments
-    else
-      @comments = Comment.where(photo_id: params[:photo_id])
-    end
-    render 'api/comments/index'
+    render 'api/comments/show'
   end
 
   private

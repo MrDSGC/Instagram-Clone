@@ -43,12 +43,12 @@ const Root = ({ store }) => {
               path="/signup"
               component={ SignUpFormContainer }
               onEnter={ _redirectIfLoggedIn } />
+          </Route>
+          <Route path='/main' component = { MainPageContainer }>
             <Route
               path="/edit"
               component={ EditFormContainer }
               onEnter={ _ensureLoggedIn } />
-          </Route>
-          <Route path='/main' component = { MainPageContainer }>
             <Route
               path='/feed'
               component = { FeedIndexContainer }

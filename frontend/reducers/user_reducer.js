@@ -1,6 +1,13 @@
 import {
   RECEIVE_USER,
-  RECEIVE_ERRORS} from '../actions/user_actions';
+  RECEIVE_USER_ERRORS
+} from '../actions/user_actions';
+
+import {
+  RECEIVE_FOLLOW,
+  REMOVE_FOLLOW
+} from '../actions/follow_actions';
+
 import merge from 'lodash/merge';
 
 const initialState = { followers: [],
@@ -12,11 +19,15 @@ const UserReducer = (state = initialState, action) => {
   switch(action.type) {
     case RECEIVE_USER:
       return action.user
-    case RECEIVE_ERRORS:
+    case RECEIVE_USER_ERRORS:
       const errors = action.errors;
-      return merge({}, _nullUser, {
+      return merge({}, initialState, {
         errors
       });
+    case RECEIVE_FOLLOW:
+      return merge( {}, newState, {follower_count: state.follower_count + 1})
+    case REMOVE_FOLLOW:
+      return merge( {}, newState, {follower_count: state.follower_count - 1})
     default:
       return state;
   }

@@ -149,9 +149,6 @@ class Photo extends React.Component {
         caption: nextProps.currentPhoto.caption
       })
     }
-
-    if(this.props.currentPhoto.current_user_liked != nextProps.currentPhoto.current_user_liked) {
-    }
   }
 
   likesOrLike () {
@@ -196,7 +193,8 @@ class Photo extends React.Component {
            {this.captionOutput()}
          </div>
          <div className="feed-comments-here">
-           <CommentIndexContainer photoId={this.props.photoId} handleLike={this.props.handleLike}
+           <CommentIndexContainer currentPhoto={this.props.currentPhoto}
+             photoId={this.props.photoId} handleLike={this.props.handleLike}
              feed={this.props.feed}/>
          </div>
        </div>

@@ -86,3 +86,5 @@
   + multiple indexes -solved by conditionally indexing based on input
   + feed photos rendering wrong - solved by conditionally rendering based on feed prop passed into the component
   + comments and likes state not updating in feed
+
+**

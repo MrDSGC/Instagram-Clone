@@ -1,0 +1,101 @@
+.user-edit-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top:0;
+}
+
+.edit-form {
+  background-color: white;
+  margin-top: 50px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid #dbdbdb;
+}
+
+.edit-cloud-upload {
+  margin: 20px;
+  margin-left: 0;
+}
+
+.edit-header-username {
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.edit-inputs {
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items:baseline;
+}
+
+.edit-inputs-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-username-inputs {
+  width:300px;
+  margin-bottom: 20px;
+  background: 0 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+
+.bio-inputs {
+  margin-left: 30px;
+  width:300px;
+  height:100px;
+  margin-bottom: 20px;
+  background: 0 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  margin-bottom: 10px;
+}
+
+.edit-button {
+  width: 100px;
+  cursor:pointer;
+  padding: 0, 8px;
+  background-color: #3897f0;
+  border: 0 solid;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 600;
+  padding: 8px 0px;
+  margin-left: 103px;
+}
+
+.edit-dropzone, .edit-profile-pic {
+  border-radius: 50%;
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  margin-right: 50px;
+}

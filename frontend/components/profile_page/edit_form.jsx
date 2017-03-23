@@ -1,13 +1,20 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Dropzone from 'react-dropzone';
+
+const CLOUDINARY_UPLOAD_PRESET = 'c1gtklzr';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/mrdsgc/upload';
 
 class EditFormed extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      id: this.props.currentUser.id,
-      username: this.props.currentUser.username,
-      biography: this.props.currentUser.biography };
+      id: '',
+      username: '',
+      biography: '',
+			profile_pic_url: '',
+			uploadedFileCloudinaryUrl: ''
+		 };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
 	}
@@ -37,29 +44,90 @@ class EditFormed extends React.Component {
 	}
 
 	componentDidMount() {
-		this.props.clearErrors();
+		this.setState({
+      id: this.props.currentUser.id,
+      username: this.props.currentUser.username,
+      biography: this.props.currentUser.biography,
+			profile_pic_url: this.props.currentUser.profile_pic_url
+		 })
+	}
+
+	onImageDrop(files) {
+		this.setState({
+			uploadedFile: files[0]
+		});
+
+		this.handleImageUpload(files[0]);
+	}
+	handleImageUpload(file) {
+		let upload = request.post(CLOUDINARY_UPLOAD_URL)
+												.field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+												.field('file', file);
+
+		upload.end((err, response) => {
+			if (err) {
+				console.error(err);
+			}
+
+			if (response.body.secure_url !== '') {
+				this.setState({
+					uploadedFileCloudinaryUrl: response.body.secure_url,
+					profile_pic_url: response.body.secure_url
+				});
+			}
+		});
 	}
 
 	render() {
 		return (
 			<div className="user-edit-component">
 				<form className="edit-form" onSubmit={this.handleSubmit} >
+					<h1 className="edit-header">
+						<div className="edit-cloud-upload">
+							<Dropzone
+								className="edit-dropzone"
+								multiple={false}
+								accept="image/*"
+								onDrop={this.onImageDrop.bind(this)}>
+								<img className="edit-profile-pic" src={this.state.profile_pic_url}></img>
+							</Dropzone>
+							<div>
+								{this.state.uploadedFileCloudinaryUrl === '' ? null :
+									<div>
+										<p className="preview-label">{this.state.uploadedFile.name}:</p>
+										<img className='photo-upload-preview' src={this.state.uploadedFileCloudinaryUrl} />
+									</div>}
+								</div>
+						</div>
+						<div className="edit-header-username">
+							{this.state.username}
+						</div>
+					</h1>
 					<div className="edit-inputs">
-						<input type="text"
-							className="inputs"
-							value={this.state.username}
-							placeholder="Username"
-							onChange={this.update("username")}/>
-            <textarea type="text"
-							className="bio-inputs"
-							value={this.state.biography}
-							placeholder="Biography"
-							onChange={this.update("biography")}/>
-						<input type="submit" value="Submit" className="splash-button"/>
+						<div className="edit-inputs-row">
+							<div>
+								Username :
+							</div>
+							<input type="text"
+								className="edit-username-inputs"
+								value={this.state.username}
+								onChange={this.update("username")}/>
+						</div>
+						<div className="edit-inputs-row">
+							<div>
+								Biography :
+							</div>
+							<textarea type="text"
+								className="bio-inputs"
+								value={this.state.biography}
+								onChange={this.update("biography")}/>
+						</div>
+						{this.renderErrors}
+						<input type="submit" value="Submit" className="edit-button"/>
 					</div>
 				</form>
 				<div >
-					{this.renderErrors()}
+
 				</div>
 			</div>
 		);

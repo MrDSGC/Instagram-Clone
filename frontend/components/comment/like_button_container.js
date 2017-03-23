@@ -3,10 +3,10 @@ import {addLike, removeLike} from '../../actions/like_actions';
 import { fetchPhoto} from '../../actions/photo_actions';
 import LikeButton from './like_button'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    currentPhoto: state.currentPhoto
+    currentPhoto: ownProps.currentPhoto || state.currentPhoto
   }
 };
 

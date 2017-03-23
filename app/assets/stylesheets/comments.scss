@@ -7,10 +7,11 @@
 }
 
 .photo-comment-index {
-  display: flex;
   flex-direction: column;
-  height:372px;
-  overflow: scroll;
+  height:366px;
+  -webkit-flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0px;
   font-size: 15px;
   padding-bottom: 10px;
 }
@@ -23,10 +24,9 @@
   margin: 5px;
   height: 24px;
   padding-left: 0;
-  margin-top: 19px;
   margin-bottom:0;
   padding-bottom: 0;
-  padding-top: 10px;
+  padding-top: 17px;
   border-top: 1px solid #b5b5b5;
 }
 
@@ -62,10 +62,14 @@
 .photo-comment {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  word-wrap: break-word;
   align-items: center;
 }
 
+.comment-body {
+  width: 75%;
+  word-wrap: break-word;
+}
 .profile-comment-username {
   margin-right: 10px;
   margin-bottom: 0;

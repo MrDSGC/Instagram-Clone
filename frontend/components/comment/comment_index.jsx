@@ -7,6 +7,7 @@ class CommentIndex extends React.Component {
   constructor(props) {
     super(props);
     this.removeComment = this.removeComment.bind(this)
+    this.belongsToPhoto = this.belongsToPhoto.bind(this)
   };
 
   removeComment(comment_id) {
@@ -17,9 +18,7 @@ class CommentIndex extends React.Component {
   };
 
   componentDidMount() {
-    if(this.props.feed) {
-      this.props.fetchComments();
-    } else {
+    if(!this.props.feed) {
       this.props.fetchComments(this.props.photo_id);
     }
   };
@@ -46,20 +45,22 @@ class CommentIndex extends React.Component {
     }
   }
 
+
+
   belongsToPhoto (comment) {
     return comment.photo_id === this.props.photo_id;
   }
 
   compnentOutput () {
     if (this.props.feed) {
-      const currentPhotoComments = this.props.comments.filter(this.belongsToPhoto) || []
+      const currentComments = this.props.comments.filter(this.belongsToPhoto)
       return(
         <div className="feed-comment-section">
           <ul className="feed-comment-index">
-            {currentPhotoComments.map(comment => {
+            {currentComments.map(comment => {
               return(
                 <li key={comment.id} className="photo-comment">
-                  <Link className="profile-comment-username" to={`/${comment.author.username}`}>{comment.author.username}</Link>
+                  <Link className="profile-comment-username" to={`/${comment.author}`}>{comment.author}</Link>
                   <p className="comment-body">
                     {comment.body}
                   </p>
@@ -71,7 +72,7 @@ class CommentIndex extends React.Component {
           </ul>
           <div className="feed-comment-form">
             <div  >
-              <LikeButtonContainer feed={this.props.feed}/>
+              <LikeButtonContainer currentPhoto={this.props.currentPhoto}/>
             </div>
             {this.commentFormOutput()}
           </div>
@@ -84,7 +85,7 @@ class CommentIndex extends React.Component {
             {this.props.comments.map(comment => {
               return(
                 <li key={comment.id} className="photo-comment">
-                  <Link className="profile-comment-username" to={`/${comment.author.username}`}>{comment.author.username}</Link>
+                  <Link className="profile-comment-username" to={`/${comment.author}`}>{comment.author}</Link>
                   <p className="comment-body">
                     {comment.body}
                   </p>

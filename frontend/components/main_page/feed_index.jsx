@@ -8,6 +8,7 @@ class FeedIndex extends React.Component {
 
   componentDidMount () {
     this.props.fetchFeed(this.props.currentUser.username);
+    this.props.fetchComments();
   }
 
   render () {

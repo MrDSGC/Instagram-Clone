@@ -5,8 +5,7 @@ class ProfileDetails extends React.Component {
   constructor(props) {
     super(props)
     this.followUser = this.followUser.bind(this);
-    this.unfollowUser = this.unfollowUser.bind(this);
-    this.profileButtonOutput = this.profileButtonOutput.bind(this);
+    this.unfollowUser = this.unfollowUser.bind(this); this.profileButtonOutput.bind(this);
   }
 
   unfollowUser (e) {
@@ -63,8 +62,7 @@ class ProfileDetails extends React.Component {
     if (this.props.username !== nextProps.username) {
       this.props.fetchUser(nextProps.username)
     }
-
-    if (this.props.user.followers.length !== nextProps.user.followers.length) {
+    if (this.props.user.follower_count !== nextProps.user.follower_count) {
       this.props.fetchUser(nextProps.username)
     }
   }

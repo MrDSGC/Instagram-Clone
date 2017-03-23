@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 class CommentForm extends React.Component {
@@ -21,9 +22,10 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = this.state;
-    this.props.createComment(this.props.photoId, comment);
-    document.getElementById("comment").value = ""
-  }
+		comment.photo_id = this.props.photoId
+    this.props.createComment(comment);
+  	this.setState({body: ""})
+	}
 
   render() {
     return (
@@ -33,6 +35,7 @@ class CommentForm extends React.Component {
 						className="comment-input"
             id="comment"
             type="text"
+						value={this.state.body}
             placeholder="Add a comment..."
             onChange={this.update("body")} />
         </form>

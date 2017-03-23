@@ -6,8 +6,8 @@ import CommentIndex from './comment_index';
 const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
-    comments: state.comments,
-    currentPhoto: state.currentPhoto,
+    comments: _.values(state.comments) || [],
+    currentPhoto: ownProps.currentPhoto || state.currentPhoto,
     photo_id: ownProps.photoId,
     feed: ownProps.feed
   })

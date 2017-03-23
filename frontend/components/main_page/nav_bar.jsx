@@ -46,7 +46,7 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <div className="logo">
-					<img className="nav-logo" onClick={this.toHomepage} src="http://res.cloudinary.com/mrdsgc/image/upload/v1489783791/festisite_instagram_s8d3bq.png"/>
+					<img className="nav-logo" onClick={this.toHomepage} src="http://res.cloudinary.com/mrdsgc/image/upload/v1489783791/seedfiles/festisite_instagram_s8d3bq.png"/>
         </div>
         <div className="SearchBar"></div>
         <ul className="nav-buttons">

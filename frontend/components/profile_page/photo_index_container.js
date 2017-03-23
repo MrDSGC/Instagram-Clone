@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPhotos } from '../../actions/photos_actions';
+import { receiveComments} from '../../actions/comment_actions'
 import PhotoIndex from './photo_index';
 
 
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPhotos: userId => dispatch(fetchPhotos(userId))
+    fetchPhotos: userId => dispatch(fetchPhotos(userId)),
+    receiveComments: () => dispatch(receiveComments([]))
   };
 };
 

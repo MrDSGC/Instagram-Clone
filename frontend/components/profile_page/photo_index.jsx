@@ -17,6 +17,7 @@ class PhotoIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPhotos(this.props.username);
+		this.props.receiveComments();
   }
 
   handleClick(id) {

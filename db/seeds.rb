@@ -11,7 +11,7 @@ User.create!(
   username: "Guest",
   password: "asdfasdf",
   biography: "Aspiring photographer",
-  profile_pic_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/default_profile_picture_wxgufw.png")
+  profile_pic_url: "http://res.cloudinary.com/mrdsgc/image/upload/v1490209047/seedfiles/bd7797d867ff2e38ea588af3000b95e9.jpg")
 
 User.create!(
   username: "Jennifer",
@@ -760,5 +760,59 @@ end
     Like.create!(
     liker_id: id_1,
     photo_id: photo_id)
+  end
+end
+
+
+
+
+
+COMMENTS = [
+  "Beautiful!",
+  "I like your style!",
+  "Sweet photo!",
+  "Cool photo, much love",
+  "Nice pic!",
+  "Nice one, keep it up",
+  "Cool!",
+  "Awesome",
+  "I love it",
+  "Super cool!",
+  "Amazing snap",
+  "Where was this taken?",
+  "What a photo!",
+  "Nice photo",
+  "Nice picture",
+  "Cool picture",
+  "Beautiful photo",
+  "sweet pic",
+  "Rad pic",
+  "Rad Photo",
+  "Awesome snap",
+  "Sick snap",
+  "Sick photo",
+  "sick pic",
+  "Amazing",
+  "Why did you take this?",
+  "I'm liking this",
+  "So creative",
+  "Nice angle",
+  "Show me more!",
+  "cool angle",
+  "Super!",
+  "Love it",
+  "I'm loving it"
+
+]
+
+
+20.times do
+  (1..14).each do |id_1|
+    comment_body = COMMENTS.sample
+    photo_id = rand(1..106)
+    Comment.create!(
+    comment_author_id: id_1,
+    photo_id: photo_id,
+    body: comment_body)
   end
 end

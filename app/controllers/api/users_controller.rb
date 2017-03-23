@@ -26,9 +26,8 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.new(user_params)
-    if @user.save
-      login(@user)
+    @user = current_user
+    if @user.update(user_params)
       render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
@@ -38,7 +37,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :biography, :profile_pic_url)
   end
 
 end
