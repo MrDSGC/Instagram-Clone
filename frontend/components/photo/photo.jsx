@@ -161,7 +161,7 @@ class Photo extends React.Component {
 
   compnentOutput () {
     let {currentPhoto} = this.props
-    if (this.props.feed || window.innerWidth < 800) {
+    if (this.props.feed) {
       return(
        <div className="inside-feed-index">
          <div className="feed-poster-info">

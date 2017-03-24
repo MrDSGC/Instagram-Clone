@@ -97,3 +97,14 @@
   + logout while on feed page doesnt redirect to login page
   when navigating from feed, comments_index_ line 31 not rendering - SOLVED set photos state to [] upon logout
   + comments wont update in feed - it can but takes SO LONG -SOLVED get rid of componentWillReceiveProps in comment index
+
+
+**3/23**
+
+- in hind-sight it probably would have been easier to have both photo component only take in a photo object passed in as a prop from the photos array. but worked on photo profile first and did not forsee challenges
+
+- wrote up production readme
+
+- made site more usable when not logged in
+
+- fully functioning site bug free
