@@ -78,7 +78,7 @@ By setting the photos state to an object of objects based on their photo, it was
 
 Comments were very similar to Likes in implementation for single photo views. I decided to normalize the data in order for make rendering comments between single and feed views from the same slice of state easier.
 
-Comments were rendered from a comments slice of state which contained an object of comment objects. Each comment object contained its own information for rendering a single comment. When viewing a single photo, the comments can be converted to an array through the `#_.values` method imported from lodash and mapped over in a list. In the feed, the state held all of the comments of all the photos on the feed. The comments were then filtered in the `CommentIndex` view and rendered to each corresponding `PhotoContainer`
+Comments were rendered from a comments slice of state which contained an object of comment objects. Each comment object contained its own information for rendering a single comment. When viewing a single photo, the comments can be converted to an array through the `#_.values` method imported from lodash and mapped over in a list. In when navigating the feed, the comment slice of state holds all of the comments of all the photos on the feed. The comments were then filtered in the `CommentIndex` component and rendered to each corresponding `PhotoContainer`
 
 Filtering the comments in state into individual corresponding comment indexes:
 ```javascript
@@ -87,7 +87,6 @@ belongsToPhoto (comment) {
 }
 
 const currentComments = this.props.comments.filter(this.belongsToPhoto)
-
 ```
 
 

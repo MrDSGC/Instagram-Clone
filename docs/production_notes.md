@@ -108,3 +108,10 @@
 - made site more usable when not logged in
 
 - fully functioning site bug free
+
+
+**3/24**
+
+- ok site wasnt bug free yet but now it is
+
+- fixed all bugs pretty quick vs working super long last week on small bugs

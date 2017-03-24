@@ -53,13 +53,13 @@ ActiveRecord::Schema.define(version: 20170320234158) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                                                                                                                           null: false
-    t.string   "session_token",                                                                                                                      null: false
-    t.string   "password_digest",                                                                                                                    null: false
-    t.string   "profile_pic_url", default: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/seedfiles/default_profile_picture_wxgufw.png"
+    t.string   "username",                                                                                                                            null: false
+    t.string   "session_token",                                                                                                                       null: false
+    t.string   "password_digest",                                                                                                                     null: false
+    t.string   "profile_pic_url", default: "https://res.cloudinary.com/mrdsgc/image/upload/v1489707262/seedfiles/default_profile_picture_wxgufw.png"
     t.text     "biography"
-    t.datetime "created_at",                                                                                                                         null: false
-    t.datetime "updated_at",                                                                                                                         null: false
+    t.datetime "created_at",                                                                                                                          null: false
+    t.datetime "updated_at",                                                                                                                          null: false
   end
 
 end

@@ -11,20 +11,21 @@ bio             | text      |
 profile_pic_url | string    |
 
 ## photos
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-img_url     | string    | not null
-caption     | text      |
-poster_id   | integer   | not null, foreign key (references users), indexed
-location    | string    |
+column name        | data type | details
+-------------------|-----------|-----------------------
+id                 | integer   | not null, primary key
+img_url            | string    | not null
+caption            | text      |
+poster_id          | integer   | not null, foreign key (references users), indexed
+location           | string    |
+current_user_liked | boolean   |
 
 ## follows
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 follower_id | integer   | not null, foreign key (references users), indexed
-followee_id | integer   | not null, foreign key (references users), indexed
+following_id | integer   | not null, foreign key (references users), indexed
 
 
 ## comments

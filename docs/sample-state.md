@@ -1,42 +1,30 @@
-{
-  currentUser: {
-    id: 1,
-    username: "app-academy"
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []}
-  },
-  photo: {
-    1: {
-      img_url: "Sample State",
-      caption: "this is a photo",
-      poster: {poster obj},
-      likers: [],
-      created_at: "date",
-      location: "sample location"
 
-      comments: {
-        1: {
-          body: " cool pic",
-          commenter_id: 2,
-        }
-      }
-    }
+{
+  comments: {
+    comment.id: { comment_details }
+    },
+  currentPhoto: {
+    caption: "hi",
+    current_user_liked: false,
+    id: 0,
+    img_url: "sample_url",
+    like_count: 0,
+    location: "sample",
+    poster: { user_details }
+  },
+  following: {
+    id: 0
   },
   photos: {
-    [{
-      img_url: "sample url",
-      like_count: 100,
-      comment_count: 100
-      }]
+    photo.idx:{ photo_details }
   },
-  user {
-    username: "sammpleusername",
-    user_profile_pic: "sample_url",
-    user_post_count: 100,
-    user_follower_count: 100,
-    user_following_count: 100,
-    user_bio: text
+  session: {
+    currentUser: { user_details },
+    errors: []
+  },
+  user: {
+    follower_count: 0,
+    followers: [],
+    following: []
   }
 }
