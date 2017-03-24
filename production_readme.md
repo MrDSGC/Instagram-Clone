@@ -36,7 +36,9 @@ end
 
   By passing in a `feed` value as a prop into the `PhotoContainer`, I was able to conditionally render and style elements so that the same component could be used in different views. I also split the photo and photos reducers to simplify the state in the frontend.
 
-  The UI of the `PhotoContainer` and `PhotoIndex` were taken directly from Instagram for a more professional look.
+  The UI of the `PhotoContainer` and `PhotoIndex` were taken directly from Instagram for a more professional look and for practice styling a design from professional UI/UX designers:
+
+![image of notebook index](docs/profile_page_screenshot.png)
 
 
 ### Likes
@@ -94,7 +96,7 @@ const currentComments = this.props.comments.filter(this.belongsToPhoto)
 
 I have plans to continue adding features and improving the functionality of this website.
 
-### hashtags
+### #Hashtags
 
 The Hashtag is one of the most defining features of Instagram and I plan on implementing this in the near future by adding a tag column to photos that can be added by putting a # before a word in the caption form. these # will create a link with the tag that redirects to a feed with photos that share the same tag.
 
