@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
+Like.delete_all
+Follow.delete_all
+Comment.delete_all
+Photo.delete_all
 
 User.create!(
   username: "Guest",
@@ -110,7 +114,6 @@ User.create!(
   profile_pic_url: "https://res.cloudinary.com/mrdsgc/image/upload/v1490286130/seedfiles/2015-09-11_13.06.59_1071913092494701581_2086833884.jpg")
 
 
-Photo.delete_all
 
 
 Photo.create!(
