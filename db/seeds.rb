@@ -871,5 +871,5 @@ end
 
 @photos.each do |photo|
   random_date= rand_time(30.days.ago)
-  photo.update({raw_age: random_date, created_at: random_date})
+  photo.update({ created_at: random_date})
 end
