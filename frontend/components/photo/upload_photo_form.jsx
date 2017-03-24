@@ -89,6 +89,7 @@ class UploadPhotoForm extends React.Component {
       caption: this.state.caption,
       location: this.state.location}
 		this.props.uploadPhoto(photo)
+			.then(hashHistory.push(`/${this.props.currentUser.username}`))
       .then(this.props.onModalClose())
 	}
 
