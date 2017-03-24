@@ -1,5 +1,7 @@
-sorted_photos = @photos.sort_by{ |photo| photo.raw_age }
-json.array! sorted_photos do |photo|
+
+
+json.array! @photos do |photo|
+  json.raw_age photo.raw_age
   json.img_url photo.img_url
   json.caption photo.caption
   json.poster photo.poster

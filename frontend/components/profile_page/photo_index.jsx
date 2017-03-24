@@ -41,11 +41,17 @@ class PhotoIndex extends React.Component {
 
 	}
 
+	sortedPhotos () {
+		return (this.props.photos.sort((a, b) => {
+			return a.raw_age - b.raw_age
+		}))
+	}
+
   render() {
     return(
       <div>
         <ul className="profile-photo-index">
-          { this.props.photos.map((photo)=> {
+          { this.sortedPhotos().map((photo)=> {
 						const backgroundPhoto = {
 							backgroundImage: `url('${photo.img_url}')`
 						}

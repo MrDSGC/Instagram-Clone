@@ -6,6 +6,7 @@ class CreatePhotos < ActiveRecord::Migration[5.0]
       t.string :location
       t.integer :poster_id, null:false
       t.boolean :current_user_liked
+
       t.timestamps
     end
     add_index :photos, :poster_id

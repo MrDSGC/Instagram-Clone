@@ -24,8 +24,9 @@ class Photo < ApplicationRecord
   end
 
   def raw_age
-    (DateTime.now - self.created_at.to_datetime)
+    (DateTime.now - self.created_at.to_datetime).to_f
   end
+
 
   def age
     age_days = (DateTime.now - self.created_at.to_datetime)

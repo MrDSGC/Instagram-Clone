@@ -5,10 +5,11 @@ import PhotoIndex from './photo_index';
 import _ from "lodash"
 
 const mapStateToProps = (state, ownProps) => {
+
   return ({
     username: ownProps.username,
-    photos:  _.values(state.photos),
-    currentPhoto: state.currentPhoto
+    currentPhoto: state.currentPhoto,
+    photos:  _.values(state.photos)
   })
 };
 

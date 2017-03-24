@@ -1,17 +1,15 @@
 class Api::PhotosController < ApplicationController
 
   def index
-
     if params[:username]
       poster = User.find_by(username: params[:username])
-      @photos = Photo.where(poster_id: poster.id).includes(:likes)
+      @photos = Photo.where(poster_id: poster.id).includes(:likes).includes(:comments)
     else
       @photos = current_user.feed_photos
       if @photos.empty?
         @photos = Photo.all.sample(10)
       end
     end
-
     if @photos
       render 'api/photos/index'
     end

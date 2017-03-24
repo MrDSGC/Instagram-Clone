@@ -9,7 +9,7 @@ import _ from "lodash"
 const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
-    photos:  _.values(state.photos)
+    photos: _.values(state.photos)
   })
 };
 

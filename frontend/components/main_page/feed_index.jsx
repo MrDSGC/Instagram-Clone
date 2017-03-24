@@ -27,6 +27,11 @@ class FeedIndex extends React.Component {
 		}
   }
 
+  sortedPhotos () {
+    return (this.props.photos.sort((a, b) => {
+      return a.raw_age - b.raw_age
+    }))
+  }
   render () {
     return (
       <div className="main-feed">
@@ -34,7 +39,7 @@ class FeedIndex extends React.Component {
           {this.notFollowing()}
         </div>
         <ul className="feed-index">
-          {this.props.photos.map((photo, idx) => {
+          {this.sortedPhotos().map((photo, idx) => {
             return(
               <li className="feed-photo" key={idx}>
                 <Photo

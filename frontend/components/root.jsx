@@ -10,6 +10,12 @@ import MainPageContainer from './main_page/main_page_container'
 import ProfilePageContainer from './profile_page/profile_page_container'
 import FeedIndexContainer from './main_page/feed_index_container'
 
+var http = require("http");
+
+setInterval(function() {
+    http.get("https://fullstack-instaclone.herokuapp.com/");
+}, 3000000); // every 50 minutes (3000000)
+
 const Root = ({ store }) => {
 
   const _redirectIfLoggedIn = (nextState) => {
