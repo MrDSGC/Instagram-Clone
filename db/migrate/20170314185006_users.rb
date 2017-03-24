@@ -4,7 +4,7 @@ class Users < ActiveRecord::Migration[5.0]
       t.string :username, null: false
       t.string :session_token, null: false
       t.string :password_digest, null: false
-      t.string :profile_pic_url, default: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/seedfiles/default_profile_picture_wxgufw.png"
+      t.string :profile_pic_url, default: "https://res.cloudinary.com/mrdsgc/image/upload/v1489707262/seedfiles/default_profile_picture_wxgufw.png"
       t.text :biography
 
       t.timestamps

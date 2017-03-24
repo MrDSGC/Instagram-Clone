@@ -43,10 +43,10 @@ end
 
 Implementing Likes began with the likes table in the database. The table was rather simple with only a `liker_id`, `photo_id`, and `id`. This join table was used to connect the user to the photo they liked.
 
-In the spirit of replicating Instagram's functionality, the ability to like a photo was shared by both a like button and the double click action on the photo itself. Both will make API requests and post an entry into the like table. The like actions are listened to by both photo reducers which update the states of the current photo and photo array to toggle the function of the button between like and unlike.
+In the spirit of replicating Instagram's functionality, the ability to like a photo was shared by both a like button and the double click action on the photo itself. Both will make API requests and post an entry into the like table. Because I decided not to create a like reducer, like actions are listened to by both photo reducers which update the states of the current photo and photo array to toggle the function of the button between like and unlike.
 
 
-PhotosReducer:
+PhotosReducer that listens for like actions:
 ```javascript
 
 const PhotosReducer = (state = initialState, action) => {
