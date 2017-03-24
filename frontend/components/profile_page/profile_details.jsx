@@ -1,12 +1,26 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import Followers from './followers';
+import Following from './following';
+import Modal from "react-modal"
 
 class ProfileDetails extends React.Component {
   constructor(props) {
     super(props)
     this.followUser = this.followUser.bind(this);
-    this.unfollowUser = this.unfollowUser.bind(this); this.profileButtonOutput.bind(this);
+    this.unfollowUser = this.unfollowUser.bind(this);
+    this.onModalClose = this.onModalClose.bind(this);
+    this.handleFollowerClick = this.handleFollowerClick.bind(this);
+    this.state = {
+      modalOpen: false,
+      followers: true
+    }
   }
+
+  onModalClose () {
+    this.setState({ modalOpen:false })
+  }
+
 
   unfollowUser (e) {
     e.preventDefault();
@@ -50,20 +64,46 @@ class ProfileDetails extends React.Component {
     }
   }
 
+  followerFollowingOutput() {
+    if ( this.state.followers ) {
+      return (
+        <Followers
+          followers={this.props.user.followers}
+          onModalClose={this.props.onModalClose} />
+      )
+    } else {
+      return (
+        <Following
+          following={this.props.user.following}
+          onModalClose={this.props.onModalClose} />
+      )
+    }
+  }
+
+  handleFollowerClick() {
+    return () => {
+      this.setState({ modalOpen: true, followers: true})
+    }
+  }
+
+  handleFollowingClick() {
+    return () => {
+      this.setState({ modalOpen: true, followers: false})
+    }
+  }
+
   componentDidMount () {
     this.props.fetchUser(this.props.username)
-    .then( action => {
-     this.props.isFollowing(action.user.id)
-   })
+    .then( this.setState({modalOpen: false}))
+    .then( action => {this.props.isFollowing(action.user.id)})
 
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.username !== nextProps.username) {
       this.props.fetchUser(nextProps.username)
-      .then( action => {
-       this.props.isFollowing(action.user.id)
-     })
+      .then( action => {this.props.isFollowing(action.user.id)})
+      .then(()=> this.setState({modalOpen: false}))
     }
     if (this.props.user.follower_count !== nextProps.user.follower_count) {
       this.props.fetchUser(nextProps.username)
@@ -92,13 +132,13 @@ class ProfileDetails extends React.Component {
               </div>
               posts
             </div>
-            <div className="follower-count">
+            <div className="follower-count" onClick={ this.handleFollowerClick()} >
               <div className="num">
                 {this.props.user.followers.length}
-              </div>
+              </div >
             Followers
             </div>
-            <div className="following-count">
+            <div className="following-count" onClick={ this.handleFollowingClick()}>
               <div className="num">
                 {this.props.user.following.length}
               </div>
@@ -112,6 +152,15 @@ class ProfileDetails extends React.Component {
             {this.props.user.biography}
           </div>
         </div>
+        <Modal
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.onModalClose}
+          className="follower-following-modal"
+          overlayClassName="follower-following-modal-overlay"
+          contentLabel="">
+          {this.followerFollowingOutput()}
+          <button className="modal-exit" onClick={this.onModalClose}>X</button>
+        </Modal>
       </div>
     )
   }

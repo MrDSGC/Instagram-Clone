@@ -12,6 +12,7 @@ json.array! @photos do |photo|
   json.comments photo.comment_count
   json.comments_index photo.comments
 
+
   if photo.likers.include?(current_user)
     json.current_user_liked true
   else

@@ -21,3 +21,10 @@ export const getFollow = (following_id) => {
     url:`api/follows/${following_id}`
   })
 }
+
+export const getFollowingAnyone = () => {
+  return $.ajax({
+    method:"GET",
+    url:`api/follows/is_following`
+  })
+}

@@ -18,6 +18,11 @@ export const isFollowing = following_id => dispatch => (
     .then(responseFollow => dispatch(recieveFollow(responseFollow)))
 )
 
+export const isFollowingAnyone = () => dispatch => (
+  APIUtil.getFollowingAnyone()
+    .then(responseFollow => dispatch(recieveFollow(responseFollow)))
+)
+
 export const addFollow = follow => dispatch => (
   APIUtil.postFollow(follow)
     .then(responseFollow => dispatch(recieveFollow(responseFollow)))

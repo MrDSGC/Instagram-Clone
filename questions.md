@@ -2,26 +2,22 @@
 
 *STYLING*
 
-Cant get comments index to look good in photo modal
-
+profile thumbnails sometimes dont load
 
 *FUNCTIONAL*
 
-- after sign up, no users to follow, no current following so empty site?
+updating currentUser attributes
+need seperate following state?
+close modal for profile details?
 
-- Instagram by itself is difficult to navigate while not logged in so should i replicate
 
-- likes count not updating in the feed
-
-- likes not updating in photo_index.jsx state
-
-- edit profile taking old state
 
 **ANSWERED**
 
-
 **TO DO**
+- pinging
 
+-
 
 **DONE TODAY**
 
@@ -30,7 +26,4 @@ Cant get comments index to look good in photo modal
 
 *MAJOR*
 
-
 *MINOR*
-
-- no errors for user Edit. will i really need it?

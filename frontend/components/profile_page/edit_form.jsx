@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
 
 const CLOUDINARY_UPLOAD_PRESET = 'c1gtklzr';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/mrdsgc/upload';
@@ -26,7 +28,11 @@ class EditFormed extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		const user = this.state;
+		const user = {
+			id: this.state.id,
+      biography: this.state.biography,
+			profile_pic_url: this.state.profile_pic_url,
+		}
 		this.props.editUser(user);
 	}
 
@@ -90,13 +96,6 @@ class EditFormed extends React.Component {
 								onDrop={this.onImageDrop.bind(this)}>
 								<img className="edit-profile-pic" src={this.state.profile_pic_url}></img>
 							</Dropzone>
-							<div>
-								{this.state.uploadedFileCloudinaryUrl === '' ? null :
-									<div>
-										<p className="preview-label">{this.state.uploadedFile.name}:</p>
-										<img className='photo-upload-preview' src={this.state.uploadedFileCloudinaryUrl} />
-									</div>}
-								</div>
 						</div>
 						<div className="edit-header-username">
 							{this.state.username}

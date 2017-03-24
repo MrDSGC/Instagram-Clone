@@ -9,16 +9,16 @@ class FeedIndex extends React.Component {
   componentDidMount () {
     this.props.fetchFeed(this.props.currentUser.username);
     this.props.fetchComments();
+    this.props.isFollowingAnyone();
   }
 
   notFollowing () {
-    if(this.props.currentUser !== null) {
-      if ( this.props.currentUser.following.length === 0) {
-        return (
-          "You are not following anyone! Here are a few random posts..."
-        )
-      }
+    if ( this.props.currentUser.following.length < 1) {
+      return (
+        "You are not following anyone! Here are a few random posts..."
+      )
     }
+
   }
 
   componentWillReceiveProps (nextProps) {

@@ -33,7 +33,7 @@ class PhotoIndex extends React.Component {
 	componentWillReceiveProps (nextProps) {
 		if (this.props.photos.length !== nextProps.photos.length) {
 			this.props.fetchPhotos(nextProps.username);
-		}
+		};
 
 		if (this.props.username != nextProps.username) {
 			this.props.fetchPhotos(nextProps.username);

@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/photo_api_util';
 import { hashHistory } from 'react-router';
-
+import {fetchPhotos} from './photos_actions'
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 
 export const receivePhoto = photo => ({
@@ -15,6 +15,7 @@ export const fetchPhoto = photoId => dispatch => (
 
 export const uploadPhoto = photo => dispatch => (
   APIUtil.postPhoto(photo)
+    .then(responsePhoto => dispatch(fetchPhotos(responsePhoto.poster.username)))
 );
 
 export const updatePhoto = photo => dispatch => (

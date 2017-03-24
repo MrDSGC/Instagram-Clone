@@ -16,6 +16,11 @@ class Api::FollowsController < ApplicationController
     render :show
   end
 
+  def get_by_follower_id
+    @follow = Follow.find_by(follower_id: current_user.id)
+    render :show
+  end
+
   def destroy_by_followed_id
     @follows = Follow.where(follower_id: current_user.id)
     @follow = @follows.find_by(followed_id: params[:followed_id])

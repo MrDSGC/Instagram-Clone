@@ -92,7 +92,6 @@ class CommentIndex extends React.Component {
                     {comment.body}
                   </p>
                   {this.deleteOutput(comment.comment_author_id, comment.id)}
-
                 </li>
               )
             })}
