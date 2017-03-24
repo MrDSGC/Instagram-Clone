@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :follows, only: [:create]
     match 'follows/:followed_id' => 'follows#destroy_by_followed_id', :via => :delete
     match 'follows/:followed_id' => 'follows#get_by_followed_id', :via => :get
-    match 'follows/is_following' => 'follows#get_by_follower_id', :via => :get
 
     resources :users, only: [:create, :update]
     match 'users/:username' => 'users#find_by_username', :via => :get

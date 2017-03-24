@@ -42,25 +42,24 @@ ActiveRecord::Schema.define(version: 20170320234158) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string   "img_url",                                            null: false
+    t.string   "img_url",            null: false
     t.string   "caption"
     t.string   "location"
-    t.integer  "poster_id",                                          null: false
+    t.integer  "poster_id",          null: false
     t.boolean  "current_user_liked"
-    t.datetime "raw_age",            default: '2017-03-24 00:20:44'
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["poster_id"], name: "index_photos_on_poster_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",        null: false
-    t.string   "session_token",   null: false
-    t.string   "password_digest", null: false
-    t.string   "profile_pic_url"
+    t.string   "username",                                                                                                                           null: false
+    t.string   "session_token",                                                                                                                      null: false
+    t.string   "password_digest",                                                                                                                    null: false
+    t.string   "profile_pic_url", default: "http://res.cloudinary.com/mrdsgc/image/upload/v1489707262/seedfiles/default_profile_picture_wxgufw.png"
     t.text     "biography"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                                                                                                                         null: false
+    t.datetime "updated_at",                                                                                                                         null: false
   end
 
 end

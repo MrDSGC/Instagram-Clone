@@ -1,5 +1,6 @@
 import React from 'react';
 import Photo from '../photo/photo';
+import MessageContainer from './message_container'
 
 class FeedIndex extends React.Component {
   constructor(props) {
@@ -9,15 +10,6 @@ class FeedIndex extends React.Component {
   componentDidMount () {
     this.props.fetchFeed(this.props.currentUser.username);
     this.props.fetchComments();
-    this.props.isFollowingAnyone();
-  }
-
-  notFollowing () {
-    if ( this.props.currentUser.following.length < 1) {
-      return (
-        "You are not following anyone! Here are a few random posts..."
-      )
-    }
 
   }
 
@@ -36,7 +28,7 @@ class FeedIndex extends React.Component {
     return (
       <div className="main-feed">
         <div className="not-following">
-          {this.notFollowing()}
+          <MessageContainer />
         </div>
         <ul className="feed-index">
           {this.sortedPhotos().map((photo, idx) => {

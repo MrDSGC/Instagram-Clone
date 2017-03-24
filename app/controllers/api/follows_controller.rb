@@ -10,14 +10,12 @@ class Api::FollowsController < ApplicationController
   end
 
   def get_by_followed_id
-
-    @follows = Follow.where(follower_id: current_user.id)
-    @follow = @follows.find_by(followed_id: params[:followed_id])
-    render :show
-  end
-
-  def get_by_follower_id
-    @follow = Follow.find_by(follower_id: current_user.id)
+    if params[:follower_id]
+      @follows = Follow.where(follower_id: current_user.id)
+      @follow = @follows.find_by(followed_id: params[:followed_id])
+    else
+      @follow = Follow.find_by(follower_id: current_user.id)
+    end
     render :show
   end
 
