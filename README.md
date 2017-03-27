@@ -1,4 +1,4 @@
-# FresherNote
+# InstaClone
 
 [InstaClone live][heroku]
 
