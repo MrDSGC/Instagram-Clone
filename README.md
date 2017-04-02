@@ -92,7 +92,7 @@ const currentComments = this.props.comments.filter(this.belongsToPhoto)
 ```
 
 
-## Future Directions for the Project
+### Future Directions for the Project
 
 I have plans to continue adding features and improving the functionality of this website.
 
