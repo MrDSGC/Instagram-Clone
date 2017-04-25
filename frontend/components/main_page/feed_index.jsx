@@ -30,6 +30,9 @@ class FeedIndex extends React.Component {
         <div className="not-following">
           <MessageContainer />
         </div>
+        <div className="suggestions">
+            
+        </div>
         <ul className="feed-index">
           {this.sortedPhotos().map((photo, idx) => {
             return(
