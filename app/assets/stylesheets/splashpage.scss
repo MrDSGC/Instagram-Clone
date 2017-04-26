@@ -21,6 +21,7 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #fafafa;
+  height: 930px;
 
 }
 .logo-header {
@@ -33,11 +34,22 @@ html {
   justify-content: center;
 }
 
+.overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+}
 .splash-page-img {
-  display: flex;
+  position: relative;
   height: 618px;
   width: auto;
   align-items: center;
+}
+
+.splash-page-gif {
+  position: absolute;
+  left: 130px;
+  top: 92px;
 }
 
 .auth-component {

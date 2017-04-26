@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchFeed } from '../../actions/photos_actions';
+import { fetchUsers } from '../../actions/user_actions';
 import { fetchComments} from '../../actions/comment_actions';
 import {addLike, destroyLike} from '../../actions/like_actions';
 import {isFollowingAnyone} from '../../actions/follow_actions'
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
     photos: _.values(state.photos),
-    following: state.following.id
+    following: state.following.id,
+    suggestions: state.user.suggestions
   })
 };
 
@@ -21,7 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     addLike: like => dispatch(addLike(like)),
     destroyLike: like => dispatch(destroyLike(like)),
     fetchComments: () => dispatch(fetchComments()),
-    isFollowingAnyone: () => dispatch(isFollowingAnyone())
+    isFollowingAnyone: () => dispatch(isFollowingAnyone()),
+    fetchUsers: () => dispatch(fetchUsers())
 
   };
 };
