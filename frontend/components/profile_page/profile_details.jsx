@@ -99,6 +99,9 @@ class ProfileDetails extends React.Component {
 
   }
 
+  componentWillUnmount () {
+    this.props.fetchUsers();
+  }
   componentWillReceiveProps(nextProps) {
     if (this.props.username !== nextProps.username) {
       this.props.fetchUser(nextProps.username)
