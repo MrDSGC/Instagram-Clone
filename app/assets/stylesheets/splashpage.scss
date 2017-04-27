@@ -147,3 +147,35 @@ html {
   border: 1px solid #e6e6e6;
   padding: 30px 40px;
 }
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-list {
+  font-size: 20px;
+  list-style-type: none;
+  display: flex;
+  width: 500px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.f-label {
+  color: black;
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.f-list-item {
+  font-size: 25px;
+  color: black;
+}
+
+.copyright {
+  position: absolute;
+  bottom: -39px;
+  right: 18px;
+}
