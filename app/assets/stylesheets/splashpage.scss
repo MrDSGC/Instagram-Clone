@@ -21,7 +21,7 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #fafafa;
-  height: 930px;
+  height: 900px;
 
 }
 .logo-header {
@@ -175,7 +175,6 @@ html {
 }
 
 .copyright {
-  position: absolute;
-  bottom: -39px;
-  right: 18px;
+  float: right;
+  text-align: right;
 }
