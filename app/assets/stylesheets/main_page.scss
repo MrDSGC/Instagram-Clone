@@ -276,48 +276,53 @@
   cursor: pointer;
 }
 
-.suggestions {
-  list-style-type: none;
-  border: solid 1px #b5b5b5;
-  padding: 5px;
+.suggested {
   display: flex;
+  background: white;
   flex-direction: column;
+  width: 600px;
   align-items: center;
-  background-color: white;
-
+  border: 1px solid #dbdbdb;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
-.suggestion-list {
-  width: 400px;
+.suggested-title {
+  font: 30px system-ui;
+  font-weight: bold;
+  color: #3897f0;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+.suggested-list {
+  list-style-type: none;
+  flex-direction: row;
   display: flex;
-  flex-direction: column;
+  width: 500px;
+  align-items: baseline;
+  justify-content: space-between;
+
 }
 
 .suggestion {
-  padding: 10px 0;
-  border-bottom: solid 1px #b5b5b5;
-  width: 270px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-}
-
-.suggestion:last-of-type {
-  padding-bottom: 10px;
-  border-bottom: none;
-}
-
-.suggestion-header {
-  font: 25px;
-  font-weight: bold;
-  color: #3897f0;
-  padding-bottom: 10px;
+  border-radius: 5px;
+  padding: 15px;
 }
 
 .suggestion-profile-photo {
   border-radius: 50%;
-  width: 40px;
+  width: 100px;
   height: auto;
+}
+
+.suggestion:hover {
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  .suggested-username {
+    text-decoration: underline;
+  }
 }
