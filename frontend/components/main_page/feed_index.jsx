@@ -2,7 +2,8 @@ import React from 'react';
 import LazyLoad from 'react-lazy-load';
 import Photo from '../photo/photo';
 import MessageContainer from './message_container'
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
+
 
 
 class FeedIndex extends React.Component {
@@ -25,27 +26,43 @@ class FeedIndex extends React.Component {
 		}
   }
 
+  handleProfile(username) {
+    return () => hashHistory.push(`/${username}`)
+  }
+
   sortedPhotos () {
     return (this.props.photos.sort((a, b) => {
       return a.raw_age - b.raw_age
     }))
   }
 
-  suggestions () {
+  suggestion () {
     return (
-      <ul className="suggestions">
-        {this.props.suggestions.map((user, idx) => {
-          return (
-            <li className="suggestion" key= {idx}>
-              <img
-                 className="suggestion-profile-photo" src={user.profile_pic_url}/>
-              <Link
-                className="suggestion-username" to={`/${user.username}`}>{user.username}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      <div className="suggested">
+        <div className="suggested-title">
+          User Spotlight
+        </div>
+
+        <ul className="suggested-list">
+          {this.props.suggestions.map((user, idx) => {
+            return (
+              <li className="suggestion" key= {idx} onClick={this.handleProfile(user.username)}>
+                <div className="suggested-pic">
+                  <img className="suggestion-profile-photo"
+                       src={user.profile_pic_url}/>
+
+                </div>
+
+                <div className="suggested-username">
+                  <Link
+                    className="suggestion-username" to={`/${user.username}`}>{user.username}
+                  </Link>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     )
   }
   render () {
@@ -55,13 +72,12 @@ class FeedIndex extends React.Component {
           <MessageContainer />
         </div>
         <div className="suggestion-list">
-            <h1 className="suggestion-header"> Suggested Users: </h1>
-            {this.suggestions()}
+            {this.suggestion()}
         </div>
         <ul className="feed-index">
           {this.sortedPhotos().map((photo, idx) => {
             return(
-              <LazyLoad offset="0">
+              <LazyLoad offset={0} key={idx}>
                 <li className="feed-photo" key={idx}>
                   <Photo
                     currentUser={this.props.currentUser}
