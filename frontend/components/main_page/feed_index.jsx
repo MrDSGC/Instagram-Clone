@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 import Photo from '../photo/photo';
 import MessageContainer from './message_container'
 import { Link } from 'react-router';
@@ -60,16 +61,18 @@ class FeedIndex extends React.Component {
         <ul className="feed-index">
           {this.sortedPhotos().map((photo, idx) => {
             return(
-              <li className="feed-photo" key={idx}>
-                <Photo
-                  currentUser={this.props.currentUser}
-                  currentPhoto={photo}
-                  photoId={photo.id}
-                  feed={true}
-                  addLike={this.props.addLike}
-                  destroyLike={this.props.destroyLike}
-                  />
-              </li>
+              <LazyLoad offset="0">
+                <li className="feed-photo" key={idx}>
+                  <Photo
+                    currentUser={this.props.currentUser}
+                    currentPhoto={photo}
+                    photoId={photo.id}
+                    feed={true}
+                    addLike={this.props.addLike}
+                    destroyLike={this.props.destroyLike}
+                    />
+                </li>
+              </LazyLoad>
             )
           })}
         </ul>
