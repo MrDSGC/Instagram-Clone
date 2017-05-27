@@ -77,7 +77,7 @@ class FeedIndex extends React.Component {
         <ul className="feed-index">
           {this.sortedPhotos().map((photo, idx) => {
             return(
-              <LazyLoad offset={0} key={idx}>
+              <LazyLoad height={700} key={idx}>
                 <li className="feed-photo" key={idx}>
                   <Photo
                     currentUser={this.props.currentUser}
