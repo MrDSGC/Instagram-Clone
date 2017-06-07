@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import FontAwesome from 'react-fontawesome'
-import Modal from "react-modal"
-import PhotoContainer from '../photo/photo_container'
+import FontAwesome from 'react-fontawesome';
+import Modal from "react-modal";
+import PhotoContainer from '../photo/photo_container';
 
 class PhotoIndex extends React.Component {
 	constructor(props) {
